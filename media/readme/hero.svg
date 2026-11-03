@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif" role="img" aria-label="A returned box comes back, its items are counted in the inspected tray, the lens is 0 of 1, the $340 refund is held, and a person decides">
+  <title>ReturnWitness: the refund waits for what's actually in the box</title>
+  <desc>Five steps: the box comes back, each item is counted once it settles in the inspected tray, the zoom lens is 0 of 1, the $340 refund is HELD, and a person decides with a single-use approval.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111111"/></marker></defs>
+  <rect width="1600" height="600" fill="#E6E4DE"/>
+  <rect x="40" y="36" width="34" height="34" fill="none" stroke="#111111" stroke-width="4"/><rect x="58" y="54" width="16" height="16" fill="#E30613"/>
+  <text x="90" y="64" font-size="26" font-weight="700" fill="#111111">ReturnWitness</text>
+  <text x="40" y="132" font-size="52" font-weight="700" fill="#111111">The refund waits for what's actually in the box.</text>
+  <text x="40" y="172" font-size="22" fill="#4F4F4F">SAM 3.1 tracks the items, app code counts the tray, Muse models can raise doubt. Only a person releases money.</text>
+  <line x1="40" y1="198" x2="1560" y2="198" stroke="#111111" stroke-width="4"/>
+  <g font-size="18" fill="#111111">
+    <!-- 1 box -->
+    <rect x="40" y="226" width="272" height="300" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <text x="58" y="258" font-size="14" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">1 · THE BOX COMES BACK</text>
+    <path d="M96 330 L176 300 L256 330 L256 420 L176 450 L96 420 Z" fill="#C89A64" stroke="#111111" stroke-width="2.5"/>
+    <path d="M96 330 L176 360 L256 330" fill="none" stroke="#111111" stroke-width="2.5"/><line x1="176" y1="360" x2="176" y2="450" stroke="#111111" stroke-width="2.5"/>
+    <path d="M96 330 L70 300 L150 272 L176 300" fill="#D9B17E" stroke="#111111" stroke-width="2.5"/>
+    <text x="58" y="490" font-size="19" font-weight="700">Kit sold as complete:</text>
+    <text x="58" y="512">camera, lens, charger · $340</text>
+    <!-- 2 tray -->
+    <rect x="344" y="226" width="272" height="300" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <text x="362" y="258" font-size="14" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">2 · COUNTED IN THE TRAY</text>
+    <rect x="372" y="290" width="216" height="160" fill="#EFEEE9" stroke="#111111" stroke-width="2.5"/>
+    <rect x="392" y="320" width="76" height="54" rx="4" fill="#111111"/><circle cx="430" cy="347" r="16" fill="#4F4F4F" stroke="#FAFAF7" stroke-width="3"/>
+    <rect x="496" y="326" width="56" height="44" rx="4" fill="#333333"/><rect x="504" y="336" width="40" height="10" fill="#4F4F4F"/>
+    <rect x="392" y="398" width="160" height="34" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="404" y="421" font-size="14" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">lens slot: empty</text>
+    <text x="362" y="490" font-size="19" font-weight="700">App code counts what</text>
+    <text x="362" y="512">settles, never track IDs</text>
+    <!-- 3 lens 0/1 -->
+    <rect x="648" y="226" width="272" height="300" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <text x="666" y="258" font-size="14" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">3 · AGAINST THE SLIP</text>
+    <text x="666" y="312" font-size="17">Camera body</text><text x="896" y="312" font-size="17" font-weight="700" fill="#00754A" text-anchor="end">1/1</text>
+    <line x1="666" y1="326" x2="900" y2="326" stroke="#C9C6BE"/>
+    <text x="666" y="356" font-size="17">Battery + charger</text><text x="896" y="356" font-size="17" font-weight="700" fill="#00754A" text-anchor="end">1/1</text>
+    <line x1="666" y1="370" x2="900" y2="370" stroke="#C9C6BE"/>
+    <text x="666" y="416" font-size="30" font-weight="700" fill="#B8000F">Lens 0 of 1</text>
+    <text x="666" y="444" font-size="16" fill="#B8000F">never seen in the tray</text>
+    <text x="666" y="490" font-size="19" font-weight="700">Missing, merged or</text>
+    <text x="666" y="512">unreadable becomes a HOLD</text>
+    <!-- 4 held -->
+    <rect x="952" y="226" width="272" height="300" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <text x="970" y="258" font-size="14" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">4 · THE REFUND WAITS</text>
+    <text x="970" y="340" font-size="64" font-weight="700">$340</text>
+    <g transform="rotate(-3 1060 395)"><rect x="984" y="372" width="170" height="60" fill="#111111"/><rect x="976" y="364" width="170" height="60" fill="#E30613" stroke="#111111" stroke-width="3"/><text x="1061" y="409" font-size="36" font-weight="700" fill="#FFFFFF" text-anchor="middle">HELD</text></g>
+    <text x="970" y="490" font-size="19" font-weight="700">Held, not denied.</text>
+    <text x="970" y="512">Models can only add holds</text>
+    <!-- 5 person -->
+    <rect x="1256" y="226" width="304" height="300" fill="#111111" stroke="#111111" stroke-width="2"/>
+    <text x="1274" y="258" font-size="14" font-family="Menlo, Consolas, monospace" fill="#C9C6BE">5 · A PERSON DECIDES</text>
+    <circle cx="1408" cy="320" r="30" fill="#F4F3EF"/><path d="M1350 420 Q1408 350 1466 420 Z" fill="#F4F3EF"/>
+    <rect x="1300" y="432" width="216" height="30" fill="none" stroke="#F4F3EF" stroke-width="2"/>
+    <text x="1308" y="452" font-size="13" font-family="Menlo, Consolas, monospace" fill="#F4F3EF">typed name · single use</text>
+    <text x="1274" y="490" font-size="19" font-weight="700" fill="#FAFAF7">One approval, bound to</text>
+    <text x="1274" y="512" fill="#FAFAF7">this evidence → Stripe test refund</text>
+    <line x1="314" y1="376" x2="340" y2="376" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="618" y1="376" x2="644" y2="376" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="922" y1="376" x2="948" y2="376" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="1226" y1="376" x2="1252" y2="376" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+  </g>
+  <text x="40" y="570" font-size="16" fill="#4F4F4F">Diagram · the case shown is RMA-20418 from the recorded run of a filmed clip: the zoom lens was never seen in the tray.</text>
+</svg>

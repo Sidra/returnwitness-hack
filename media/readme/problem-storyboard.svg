@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1550" height="540" viewBox="0 0 1550 540" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif" role="img" aria-label="Three panels: a kit is returned, the parcel scan marks it received in 40 seconds, and the $340 refund goes out with the lens still missing">
+  <title>The problem: a parcel scan is not an inspection</title>
+  <desc>Panel 1: a kit sold as complete comes back. Panel 2: at forty seconds a box, the parcel scan marks it received. Panel 3: the full $340 refund goes out on its own and the missing lens is found by the next customer.</desc>
+  <rect width="1550" height="540" fill="#F4F3EF"/>
+  <text x="40" y="58" font-size="36" font-weight="700" fill="#111111">A parcel scan is not an inspection</text>
+  <g font-size="18" fill="#111111">
+    <rect x="40" y="92" width="472" height="390" fill="#FAFAF7" stroke="#111111" stroke-width="2"/><rect x="40" y="92" width="472" height="6" fill="#111111"/>
+    <text x="64" y="134" font-size="20" font-weight="700" fill="#B8000F">1 · THE KIT COMES BACK</text>
+    <path d="M150 260 L250 222 L350 260 L350 372 L250 410 L150 372 Z" fill="#C89A64" stroke="#111111" stroke-width="2.5"/>
+    <path d="M150 260 L250 298 L350 260" fill="none" stroke="#111111" stroke-width="2.5"/><line x1="250" y1="298" x2="250" y2="410" stroke="#111111" stroke-width="2.5"/>
+    <rect x="370" y="180" width="110" height="140" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <text x="384" y="206" font-size="13" font-family="Menlo, Consolas, monospace">SLIP</text>
+    <text x="384" y="236" font-size="14">1 camera</text><text x="384" y="262" font-size="14">1 zoom lens</text><text x="384" y="288" font-size="14">1 charger</text>
+    <text x="64" y="452">Sold as complete. $340 requested.</text>
+
+    <rect x="539" y="92" width="472" height="390" fill="#FAFAF7" stroke="#111111" stroke-width="2"/><rect x="539" y="92" width="472" height="6" fill="#111111"/>
+    <text x="563" y="134" font-size="20" font-weight="700" fill="#B8000F">2 · FORTY SECONDS A BOX</text>
+    <rect x="620" y="210" width="310" height="150" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <g fill="#111111"><rect x="650" y="236" width="6" height="70"/><rect x="662" y="236" width="3" height="70"/><rect x="671" y="236" width="8" height="70"/><rect x="685" y="236" width="3" height="70"/><rect x="694" y="236" width="5" height="70"/><rect x="705" y="236" width="9" height="70"/><rect x="720" y="236" width="3" height="70"/><rect x="729" y="236" width="6" height="70"/></g>
+    <text x="760" y="268" font-size="22" font-weight="700" fill="#00754A">RECEIVED</text>
+    <text x="760" y="298" font-size="15" fill="#4F4F4F">parcel scanned</text>
+    <text x="650" y="340" font-size="15" fill="#4F4F4F">nobody looked inside</text>
+    <text x="563" y="452">The scan says the box arrived, not what's in it.</text>
+
+    <rect x="1038" y="92" width="472" height="390" fill="#FAFAF7" stroke="#111111" stroke-width="2"/><rect x="1038" y="92" width="472" height="6" fill="#E30613"/>
+    <text x="1062" y="134" font-size="20" font-weight="700" fill="#B8000F">3 · THE MONEY GOES OUT</text>
+    <text x="1062" y="250" font-size="72" font-weight="700">$340</text>
+    <rect x="1290" y="196" width="190" height="56" fill="#111111"/><text x="1385" y="233" font-size="22" font-weight="700" fill="#FAFAF7" text-anchor="middle">AUTO REFUND</text>
+    <text x="1062" y="318" font-size="22" font-weight="700" fill="#B8000F">The lens never came back.</text>
+    <text x="1062" y="350" font-size="17" fill="#4F4F4F">The short kit goes back on the shelf;</text>
+    <text x="1062" y="374" font-size="17" fill="#4F4F4F">the next customer finds it.</text>
+    <text x="1062" y="452">One missing lens, a full refund, no record.</text>
+  </g>
+  <text x="40" y="518" font-size="15" fill="#4F4F4F">Storyboard · simplified shapes, a fictional store. The $340 kit and its packing slip are the app's seeded fixture.</text>
+</svg>

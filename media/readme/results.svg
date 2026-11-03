@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title>Results on the four filmed clips, losses first</title>
+  <desc>Four filmed clips: g0 empty tray, g1 clean unpack (the calibration clip), d1 lens missing, d2 complete kit. d2 was held: a false hold, because a reader called the real compact film camera a toy. d1 was held correctly. Same-input A/B, n equals 4: Muse Spark alone 4 of 4, the pipeline 3 of 4, 0 wrong refunds in both arms; the pipeline's 3 of 4 is flattering because g0 and g1 ran without the auditor and Glimmer. The registered gate is INCOMPLETE: g2 to g8 were not filmed.</desc>
+  <rect width="1200" height="640" fill="#F4F3EF"/>
+  <text x="40" y="54" font-size="28" font-weight="700" fill="#111111">Results on four filmed clips, losses first</text>
+  <text x="40" y="84" font-size="16" fill="#4F4F4F">One live run of the registered order. Props: a real compact film camera stands in for the camera body, a lens-shaped mug for the lens.</text>
+  <line x1="40" y1="104" x2="1160" y2="104" stroke="#111111" stroke-width="3"/>
+  <g font-size="16" fill="#111111">
+    <text x="40" y="140" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">CLIP</text>
+    <text x="300" y="140" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">WHAT WAS IN THE BOX</text>
+    <text x="640" y="140" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">PIPELINE OUTCOME</text>
+    <line x1="40" y1="152" x2="1160" y2="152" stroke="#111111" stroke-width="2"/>
+
+    <rect x="40" y="158" width="1120" height="62" fill="#FFF1F1"/>
+    <rect x="40" y="158" width="6" height="62" fill="#E30613"/>
+    <text x="60" y="186" font-weight="700">d2 · RMA-20419</text>
+    <text x="300" y="186">complete kit</text>
+    <text x="640" y="186" font-weight="700" fill="#B8000F">HELD: a false hold (loss)</text>
+    <text x="640" y="208" font-size="14" fill="#B8000F">all three counted; a reader called the real camera a toy</text>
+
+    <rect x="40" y="226" width="1120" height="52" fill="#FAFAF7"/>
+    <text x="60" y="258" font-weight="700">d1 · RMA-20418</text>
+    <text x="300" y="258">zoom lens missing</text>
+    <text x="640" y="258" font-weight="700" fill="#00754A">HELD correctly: lens 0 of 1 seen in the tray</text>
+
+    <rect x="40" y="284" width="1120" height="52" fill="#FAFAF7"/>
+    <text x="60" y="316" font-weight="700">g1</text>
+    <text x="300" y="316">clean unpack (calibration clip)</text>
+    <text x="640" y="316" font-weight="700" fill="#00754A">scored correctly (merged_mask hold)</text>
+
+    <rect x="40" y="342" width="1120" height="52" fill="#FAFAF7"/>
+    <text x="60" y="374" font-weight="700">g0</text>
+    <text x="300" y="374">empty tray</text>
+    <text x="640" y="374" font-weight="700" fill="#00754A">scored correctly</text>
+
+    <!-- A/B -->
+    <text x="40" y="438" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">SAME FRAMES, TWO ANSWERS · n = 4</text>
+    <text x="40" y="472" font-weight="700">Muse Spark alone</text>
+    <rect x="250" y="454" width="480" height="26" fill="#FAFAF7" stroke="#111111" stroke-width="1.5"/>
+    <rect x="250" y="454" width="480" height="26" fill="#111111"/>
+    <text x="746" y="473" font-weight="700">4 / 4</text>
+    <text x="40" y="512" font-weight="700">The pipeline</text>
+    <rect x="250" y="494" width="480" height="26" fill="#FAFAF7" stroke="#111111" stroke-width="1.5"/>
+    <rect x="250" y="494" width="360" height="26" fill="#111111"/>
+    <rect x="610" y="494" width="120" height="26" fill="#E30613"/>
+    <text x="746" y="513" font-weight="700">3 / 4</text>
+    <text x="800" y="473">wrong refunds: 0</text>
+    <text x="800" y="513">wrong refunds: 0 · false holds: 1 (d2)</text>
+    <text x="40" y="552" font-size="15" fill="#4F4F4F">The pipeline arm wasn't run the same way on every clip: g0 and g1 ran without the open-weight auditor and Glimmer, so its 3 / 4 is flattering.</text>
+  </g>
+  <rect x="40" y="572" width="1120" height="46" fill="#111111"/>
+  <text x="56" y="602" font-size="18" font-weight="700" fill="#F5A524">Registered gate: INCOMPLETE</text>
+  <text x="330" y="602" font-size="16" fill="#FAFAF7">not run as registered: g2–g8 were not filmed. g0 and g1 scored correctly at the estimates.</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" font-family="-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title>How ReturnWitness decides a return</title>
+  <desc>Overhead clip, then SAM 3.1 segments and tracks each item, then app code counts what settles in the tray, then reconciliation against the packing slip and policy. Muse Spark 1.3, Muse Spark Open on Baseten and Muse Glimmer on Modal read the same evidence and can only add holds. Muse Wonder 1.0 drafts a decision that cites a clause and can only move a case toward HELD. A person approves with a single-use token, and only then does a Stripe test-mode refund run.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111111"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E30613"/></marker>
+  </defs>
+  <rect width="1200" height="660" fill="#F4F3EF"/>
+  <text x="40" y="54" font-size="28" font-weight="700" fill="#111111">How a return is decided</text>
+  <text x="40" y="84" font-size="16" fill="#4F4F4F">Local runs call the models live; the public site replays the recorded run of the filmed clips, labelled as a replay.</text>
+  <line x1="40" y1="104" x2="1160" y2="104" stroke="#111111" stroke-width="3"/>
+
+  <g font-size="15" fill="#111111">
+    <!-- row 1 -->
+    <rect x="40" y="136" width="230" height="124" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="40" y="136" width="230" height="6" fill="#111111"/>
+    <text x="56" y="172" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">01 · BENCH</text>
+    <text x="56" y="198" font-size="19" font-weight="700">Overhead clip</text>
+    <text x="56" y="222">a fixed camera films the</text>
+    <text x="56" y="242">unboxing, table only</text>
+
+    <rect x="320" y="136" width="250" height="124" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="320" y="136" width="250" height="6" fill="#111111"/>
+    <text x="336" y="172" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">02 · META · SAM 3.1</text>
+    <text x="336" y="198" font-size="19" font-weight="700">Segment + track</text>
+    <text x="336" y="222">each item, hand and paper,</text>
+    <text x="336" y="242">frame by frame</text>
+
+    <rect x="620" y="136" width="250" height="124" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="620" y="136" width="250" height="6" fill="#111111"/>
+    <text x="636" y="172" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">03 · APP CODE</text>
+    <text x="636" y="198" font-size="19" font-weight="700">Tray counter</text>
+    <text x="636" y="222">an item counts once it settles</text>
+    <text x="636" y="242">in the tray, never by track IDs</text>
+
+    <rect x="920" y="136" width="240" height="124" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="920" y="136" width="240" height="6" fill="#111111"/>
+    <text x="936" y="172" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">04 · APP CODE</text>
+    <text x="936" y="198" font-size="19" font-weight="700">Reconcile</text>
+    <text x="936" y="222">count vs packing slip</text>
+    <text x="936" y="242">and the store's policy</text>
+
+    <line x1="272" y1="198" x2="316" y2="198" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="572" y1="198" x2="616" y2="198" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="872" y1="198" x2="916" y2="198" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+
+    <!-- readers -->
+    <rect x="560" y="300" width="600" height="112" fill="#FFF1F1" stroke="#E30613" stroke-width="2"/>
+    <text x="576" y="330" font-size="13" font-family="Menlo, Consolas, monospace" fill="#B8000F">READERS · CAN ONLY ADD A HOLD</text>
+    <text x="576" y="356" font-size="16" font-weight="700">Muse Spark 1.3 (Meta) · Muse Spark Open (Baseten) · Glimmer (Modal)</text>
+    <text x="576" y="380">read the same evidence: serial labels, damage, stand-ins.</text>
+    <text x="576" y="400">Merged most-restrictive-first; a failed optional reader adds no hold.</text>
+    <line x1="1100" y1="298" x2="1100" y2="266" stroke="#E30613" stroke-width="3" marker-end="url(#r)"/>
+
+    <!-- row 2 -->
+    <rect x="40" y="460" width="270" height="140" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="40" y="460" width="270" height="6" fill="#111111"/>
+    <text x="56" y="496" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">05 · META · MUSE WONDER 1.0</text>
+    <text x="56" y="522" font-size="19" font-weight="700">Draft the decision</text>
+    <text x="56" y="546">cites the policy clause; app</text>
+    <text x="56" y="566">code rejects any APPROVED</text>
+    <text x="56" y="586">proposal: HELD-only</text>
+
+    <rect x="360" y="460" width="250" height="140" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="360" y="460" width="250" height="6" fill="#E30613"/>
+    <text x="376" y="496" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">06 · A PERSON</text>
+    <text x="376" y="522" font-size="19" font-weight="700">Approves, or not</text>
+    <text x="376" y="546">reads the evidence, types</text>
+    <text x="376" y="566">their name; an override</text>
+    <text x="376" y="586">needs a written reason</text>
+
+    <rect x="660" y="460" width="250" height="140" fill="#FAFAF7" stroke="#111111" stroke-width="2"/>
+    <rect x="660" y="460" width="250" height="6" fill="#111111"/>
+    <text x="676" y="496" font-size="13" font-family="Menlo, Consolas, monospace" fill="#4F4F4F">07 · APP CODE</text>
+    <text x="676" y="522" font-size="19" font-weight="700">Single-use token</text>
+    <text x="676" y="546">HMAC-signed, 10 minutes,</text>
+    <text x="676" y="566">bound to this evidence and</text>
+    <text x="676" y="586">amount; spent before Stripe</text>
+
+    <rect x="960" y="460" width="200" height="140" fill="#111111" stroke="#111111" stroke-width="2"/>
+    <text x="976" y="496" font-size="13" font-family="Menlo, Consolas, monospace" fill="#C9C6BE">08 · STRIPE</text>
+    <text x="976" y="522" font-size="19" font-weight="700" fill="#FAFAF7">Refund</text>
+    <text x="976" y="546" fill="#FAFAF7">test mode only;</text>
+    <text x="976" y="566" fill="#FAFAF7">any other key</text>
+    <text x="976" y="586" fill="#FAFAF7">is refused</text>
+
+    <path d="M960 262 L960 280 L175 280 L175 456" fill="none" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="312" y1="530" x2="356" y2="530" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="612" y1="530" x2="656" y2="530" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+    <line x1="912" y1="530" x2="956" y2="530" stroke="#111111" stroke-width="3" marker-end="url(#a)"/>
+  </g>
+  <text x="40" y="636" font-size="16" font-weight="700" fill="#B8000F">Any error, timeout, unreadable label or disagreement leaves the case HELD. Nothing on this path refunds by itself.</text>
+</svg>
