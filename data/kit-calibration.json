@@ -1,0 +1,33 @@
+{
+  "version": "kit-calibration/1",
+  "status": "calibrated",
+  "kitId": "ck-16-starter",
+  "clipId": "gate-g1",
+  "recordedAt": "recorded",
+  "calibratedAt": "recorded",
+  "gitHash": null,
+  "note": "Measured from clean clip g1 by scripts/calibrate-areas.ts (rule: evals/CALIBRATION-PREREG.md). Applied to real footage only; synthetic scenes keep kit.config's estimates. g1 is the calibration clip and is not scored in the calibrated gate run.",
+  "items": {
+    "camera_body": {
+      "estimate": 0.0067,
+      "measured": 0.01159,
+      "frames": 138,
+      "applied": true,
+      "reason": "median of 138 settled, hand-free frames (1.73× the estimate)"
+    },
+    "lens": {
+      "estimate": 0.0079,
+      "measured": 0.01476,
+      "frames": 75,
+      "applied": true,
+      "reason": "median of 75 settled, hand-free frames (1.87× the estimate)"
+    },
+    "battery": {
+      "estimate": 0.0043,
+      "measured": 0.01111,
+      "frames": 35,
+      "applied": true,
+      "reason": "median of 35 settled, hand-free frames (2.58× the estimate)"
+    }
+  }
+}

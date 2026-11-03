@@ -1,0 +1,10 @@
+/* /how-it-works: named details for the supporting workings, and a 13px floor for table heads and small labels. */
+.details { border-top: 2px solid var(--line); padding-top: 4px; }
+.details > summary { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: 16px; font-weight: 700; list-style-position: inside; }
+.details > summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.floor :global(.table th), .floor :global(.kbd), .floor :global(.scale-kind), .floor :global(.loss-tag) { font-size: 13px; }
+
+.details > summary { list-style: none; gap: 10px; cursor: pointer; }
+.details > summary::-webkit-details-marker { display: none; }
+.details > summary::before { content: "+"; flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; border: 2px solid var(--line); font-family: var(--font-mono); font-size: 15px; font-weight: 700; line-height: 1; }
+.details[open] > summary::before { content: "−"; }

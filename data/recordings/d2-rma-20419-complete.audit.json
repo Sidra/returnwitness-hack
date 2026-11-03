@@ -1,0 +1,35 @@
+{
+  "recordedAt": "recorded",
+  "kind": "audit",
+  "clipId": "d2-rma-20419-complete",
+  "data": {
+    "provider": "baseten",
+    "model": "meta-models/muse-spark-open-1026",
+    "audit": {
+      "items": [
+        {
+          "itemKey": "camera_body",
+          "labelLegible": true,
+          "visibleDamage": false,
+          "standInSuspected": true,
+          "note": "Label BM-CB-55120 is legible but item is a toy car, not a camera body."
+        },
+        {
+          "itemKey": "lens",
+          "labelLegible": true,
+          "visibleDamage": false,
+          "standInSuspected": false,
+          "note": "Label BW-LN-80311 is clearly legible on the lens with no visible damage."
+        },
+        {
+          "itemKey": "battery",
+          "labelLegible": false,
+          "visibleDamage": false,
+          "standInSuspected": false,
+          "note": "Black dual-bay charger with white label too blurry to read, no visible damage."
+        }
+      ]
+    },
+    "unanswered": []
+  }
+}

@@ -1,0 +1,12 @@
+.summary { display: grid; gap: 18px; }
+.beats { display: grid; gap: 0; grid-template-columns: minmax(0, 1fr); border: 1px solid var(--hair); }
+@media (min-width: 768px) { .beats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.beat { display: grid; gap: 8px; align-content: start; padding: 20px; background: var(--card); min-width: 0; }
+.beat + .beat { border-top: 1px solid var(--hair); }
+@media (min-width: 768px) { .beat + .beat { border-top: 0; border-left: 1px solid var(--hair); } }
+.big { margin: 0; font-weight: 700; font-size: clamp(24px, 3.2vw, 36px); line-height: 1.1; letter-spacing: -.01em; }
+.big :global(.st) { font-size: inherit; letter-spacing: .02em; }
+.line { margin: 0; font-size: 16px; line-height: 1.45; }
+.caveat { margin: 0; font-size: 15px; line-height: 1.45; color: var(--muted); }
+.loss { display: grid; gap: 4px; border-left: 6px solid var(--danger); padding: 4px 0 4px 14px; }
+.lossHead { margin: 0; font-weight: 700; font-size: 18px; }

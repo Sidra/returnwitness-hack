@@ -1,0 +1,19 @@
+{
+  "kind": "fleet",
+  "rmaId": "RMA-20418",
+  "role": "policy-agent",
+  "mode": "LIVE_META",
+  "model": "muse-wonder-1.0",
+  "latencyMs": 90000,
+  "recordedAt": "recorded",
+  "ok": false,
+  "error": "timeout after 90000 ms",
+  "output": null,
+  "usage": {
+    "inputTokens": null,
+    "outputTokens": null,
+    "cachedTokens": 0
+  },
+  "costUsd": null,
+  "timedOut": true
+}

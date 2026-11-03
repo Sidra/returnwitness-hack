@@ -1,0 +1,159 @@
+{
+  "runId": "gate_1",
+  "at": "recorded",
+  "gitHash": null,
+  "rule": "scripts/gate/RULE.md",
+  "sizes": "estimates",
+  "verdict": "INCOMPLETE",
+  "notRun": [
+    "g2",
+    "g3",
+    "g4",
+    "g5",
+    "g6",
+    "g7",
+    "g8"
+  ],
+  "model": "sam-3.1",
+  "counterConfig": {
+    "boxZone": {
+      "x0": 0,
+      "y0": 0,
+      "x1": 0.45,
+      "y1": 1
+    },
+    "trayZone": {
+      "x0": 0.55,
+      "y0": 0,
+      "x1": 1,
+      "y1": 1
+    },
+    "settleFrames": 3,
+    "settleMotion": 0.02,
+    "slotIoU": 0.3,
+    "liftGraceFrames": 3,
+    "longOcclusionFrames": 25,
+    "mergeAreaRatio": 1.4,
+    "liftAreaTolerance": 0.4,
+    "handCoverage": 0.2,
+    "gripCoverage": 0.6,
+    "labelMinConfidence": 0.6,
+    "checkLabels": false,
+    "seenNotPlacedFrames": 3,
+    "handBlocksTray": false,
+    "items": [
+      {
+        "key": "camera_body",
+        "concept": "mint green object",
+        "expectedAreaFrac": 0.0067,
+        "requiresSerial": true
+      },
+      {
+        "key": "lens",
+        "concept": "camera lens",
+        "expectedAreaFrac": 0.0079,
+        "requiresSerial": true
+      },
+      {
+        "key": "battery",
+        "concept": "battery",
+        "expectedAreaFrac": 0.0043,
+        "requiresSerial": false
+      }
+    ],
+    "handConcept": "hand",
+    "ignoreConcepts": [
+      "kraft paper",
+      "cardboard box"
+    ]
+  },
+  "clips": [
+    {
+      "clipId": "g0",
+      "pass": true,
+      "failures": [],
+      "perItem": [
+        {
+          "itemKey": "camera_body",
+          "expected": 0,
+          "arrivals": 0,
+          "samIds": 0,
+          "held": []
+        },
+        {
+          "itemKey": "lens",
+          "expected": 0,
+          "arrivals": 0,
+          "samIds": 0,
+          "held": []
+        },
+        {
+          "itemKey": "battery",
+          "expected": 0,
+          "arrivals": 0,
+          "samIds": 0,
+          "held": []
+        }
+      ],
+      "holdCodes": [],
+      "latencyMs": 9541,
+      "frames": 80,
+      "samIds": {
+        "camera_body": 0,
+        "lens": 0,
+        "battery": 0
+      }
+    },
+    {
+      "clipId": "g1",
+      "pass": true,
+      "failures": [],
+      "perItem": [
+        {
+          "itemKey": "camera_body",
+          "expected": 1,
+          "arrivals": 1,
+          "samIds": 1,
+          "held": [
+            "merged_mask",
+            "merged_mask",
+            "merged_mask"
+          ]
+        },
+        {
+          "itemKey": "lens",
+          "expected": 1,
+          "arrivals": 1,
+          "samIds": 1,
+          "held": [
+            "merged_mask",
+            "merged_mask",
+            "merged_mask"
+          ]
+        },
+        {
+          "itemKey": "battery",
+          "expected": 1,
+          "arrivals": 1,
+          "samIds": 1,
+          "held": [
+            "merged_mask",
+            "merged_mask",
+            "merged_mask",
+            "merged_mask"
+          ]
+        }
+      ],
+      "holdCodes": [
+        "merged_mask"
+      ],
+      "latencyMs": 17128,
+      "frames": 192,
+      "samIds": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      }
+    }
+  ]
+}

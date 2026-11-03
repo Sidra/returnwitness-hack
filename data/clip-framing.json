@@ -1,0 +1,6 @@
+{
+  "note": "Framing of the calibration clip g1 (IMG_4009) against the d-clips (IMG_E4006): the tray tape rectangle's outer bounding box, measured on the final cuts. Stated beside every calibration line (scripts/gate/RULE.md).",
+  "measuredOn": "the 1636×1080 cuts; the 1636×960 re-cut is the same crop of the same frames (crop=1636:960:0:50, x unchanged)",
+  "g1VsD": { "x": 0.059, "y": 0.022, "area": 0.082 },
+  "line": "g1's tray rect is +5.9 % wider and +2.2 % taller than in the d-clips (area ≈ +8 %), measured on the 1080 cuts; the 960 re-cut is the same crop of the same frames. Item sizes measured on g1 are applied to d1/d2 as registered, with no correction factor."
+}

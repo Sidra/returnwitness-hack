@@ -1,0 +1,87 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ReturnWitness
+.env*
+!.env.example
+.data/
+.venv/
+__pycache__/
+dist/
+*.backup
+.DS_Store
+gate/clips/*
+gate/results/*.tmp
+!gate/clips/README.md
+gate/frames/
+test-results/
+playwright-report/
+
+# Vercel/Upstash agent skills (installed by the CLI)
+.agents/
+.claude/skills/
+skills-lock.json
+.env.vercel
+.next-prepush/
+
+# Capture output: keep the beat screenshots, never the 4K frames or videos
+video/out/*-frames/
+video/out/*.mp4
+video/out/*.webm
+.next-*/
+
+# Bench footage and anything derived from it stays local.
+data/recordings/archive-a/
+# A local audit copy of the reported run (the top-level recordings are byte-identical), and run logs.
+data/recordings/run2-reported/
+data/recordings/**/live-run*.log
+data/recordings/*/crops/
+data/recordings/*/store*.json
+video/out/
+# Drafted customer messages from filmed runs are never published (one is false: data/known-misreads.ts). Every copy.
+data/recordings/**/*customer-message-drafter*.json
+# A smoke test that is not part of the reported run: its recordings stay local.
+data/recordings/smoke-g1*.json
+
+docs/
+.claude/
+.returnwitness-public-export

@@ -1,0 +1,11 @@
+{
+  "kitId": "ck-16-starter",
+  "mode": "LIVE_META",
+  "model": "muse-image-1.0",
+  "prompt": "Top-down flat illustration of a complete returned kit laid out on a neutral grey inspection mat: one generic film camera, one generic camera lens, one generic battery charger. Each item is a simple, generic, unbranded shape, evenly spaced with clear gaps between them, soft even lighting, no shadows overlapping. No logos, no brand names, no text, no labels, no serial numbers, no people, no hands, not a photograph of any real product.",
+  "imagePath": "/illustrations/ck-16-starter.webp",
+  "createdAt": "recorded",
+  "latencyMs": 26108,
+  "provenance": "live Muse Image call, 26108 ms",
+  "label": "generated illustration"
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "fleet",
+  "rmaId": "RMA-20419",
+  "role": "damage-reader",
+  "mode": "LIVE_META",
+  "model": "muse-spark-1.3",
+  "latencyMs": 11239,
+  "requestId": "chatcmpl-01a1a26b-fb96-7299-a4fb-8308ce364a9f",
+  "recordedAt": "recorded",
+  "ok": true,
+  "output": {
+    "items": [
+      {
+        "itemKey": "camera_body",
+        "surface": "opened",
+        "detail": "pale green toy car, label BM-CB-55120"
+      },
+      {
+        "itemKey": "lens",
+        "surface": "opened",
+        "detail": "black zoom lens, label BW-LN-80311"
+      },
+      {
+        "itemKey": "battery",
+        "surface": "opened",
+        "detail": "black dual battery charger out of box"
+      }
+    ],
+    "outerBox": "intact"
+  },
+  "usage": {
+    "inputTokens": 2212,
+    "outputTokens": 1318,
+    "cachedTokens": 0
+  },
+  "costUsd": 0.0083665
+}

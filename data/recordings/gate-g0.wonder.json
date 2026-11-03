@@ -1,0 +1,187 @@
+{
+  "recordedAt": "recorded",
+  "kind": "wonder",
+  "clipId": "gate-g0",
+  "data": {
+    "model": "muse-wonder-1.0",
+    "mode": "LIVE_META",
+    "protocol": "tools",
+    "draft": {
+      "recommendation": "HOLD",
+      "proposedRefundCents": 0,
+      "citedClauses": [
+        {
+          "clauseId": "4.2",
+          "quote": "A kit is refunded in full only when every component listed on the packing slip is returned."
+        },
+        {
+          "clauseId": "4.3",
+          "quote": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+        },
+        {
+          "clauseId": "5.1",
+          "quote": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+        }
+      ],
+      "rationale": "All three kit components are MISSING with 0 of 1 observed, so no full or partial refund can be recommended and the case must remain HELD for review.",
+      "lineNotes": [
+        {
+          "itemKey": "camera_body",
+          "note": "Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip."
+        },
+        {
+          "itemKey": "lens",
+          "note": "Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip."
+        },
+        {
+          "itemKey": "battery",
+          "note": "Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip."
+        }
+      ]
+    },
+    "latencyMs": 20138,
+    "requestIds": [
+      "chatcmpl-01a1a26e-7e43-70b4-8402-83dcddec70ff",
+      "chatcmpl-01a1a26e-9a7e-7783-bc81-046fcf31650e",
+      "chatcmpl-01a1a26e-b52f-7398-92d1-d8343b6f255d"
+    ],
+    "steps": [
+      {
+        "kind": "tool_call",
+        "name": "read_reconciliation",
+        "args": {}
+      },
+      {
+        "kind": "tool_result",
+        "name": "read_reconciliation",
+        "result": {
+          "rmaId": "AB-G0",
+          "state": "Held",
+          "requestedRefundCents": 34000,
+          "evidence_digest": "58b3f88436f51c31",
+          "lines": [
+            {
+              "itemKey": "camera_body",
+              "description": "Camera body",
+              "expected": 1,
+              "observed": 0,
+              "status": "MISSING",
+              "reasons": [
+                "0 of 1 seen in the tray during this clip"
+              ],
+              "unitPriceCents": 19900
+            },
+            {
+              "itemKey": "lens",
+              "description": "Zoom lens",
+              "expected": 1,
+              "observed": 0,
+              "status": "MISSING",
+              "reasons": [
+                "0 of 1 seen in the tray during this clip"
+              ],
+              "unitPriceCents": 10900
+            },
+            {
+              "itemKey": "battery",
+              "description": "Battery + charger",
+              "expected": 1,
+              "observed": 0,
+              "status": "MISSING",
+              "reasons": [
+                "0 of 1 seen in the tray during this clip"
+              ],
+              "unitPriceCents": 3200
+            }
+          ],
+          "allClear": false,
+          "policy": [
+            {
+              "clauseId": "1.1",
+              "title": "Return window",
+              "text": "Items may be returned within 30 days of delivery."
+            },
+            {
+              "clauseId": "2.1",
+              "title": "Condition",
+              "text": "Items must be returned in resalable condition with all accessories and packaging inserts."
+            },
+            {
+              "clauseId": "3.1",
+              "title": "Inspection",
+              "text": "Every return routed to an inspection bench is opened on camera before any refund is issued."
+            },
+            {
+              "clauseId": "4.1",
+              "title": "Kits",
+              "text": "Each component of a kit is listed as its own line on the packing slip."
+            },
+            {
+              "clauseId": "4.2",
+              "title": "Complete kits",
+              "text": "A kit is refunded in full only when every component listed on the packing slip is returned."
+            },
+            {
+              "clauseId": "4.3",
+              "title": "Incomplete kits",
+              "text": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+            },
+            {
+              "clauseId": "4.4",
+              "title": "Serialised components",
+              "text": "A serialised component must carry the serial recorded on the packing slip."
+            },
+            {
+              "clauseId": "5.1",
+              "title": "Holds are not denials",
+              "text": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+            },
+            {
+              "clauseId": "6.1",
+              "title": "Refund method",
+              "text": "Approved refunds are issued to the original payment method."
+            }
+          ],
+          "voice_note": null
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "58b3f88436f51c31",
+          "reason": "All lines are MISSING (0 observed), so refund must be held for review per incomplete kit policy."
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "58b3f88436f51c31",
+          "reason": "All lines are MISSING (0 observed), so refund must be held for review per incomplete kit policy."
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "propose_transition",
+        "result": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "final",
+        "text": "{\"recommendation\":\"HOLD\",\"proposedRefundCents\":0,\"citedClauses\":[{\"clauseId\":\"4.2\",\"quote\":\"A kit is refunded in full only when every component listed on the packing slip is returned.\"},{\"clauseId\":\"4.3\",\"quote\":\"When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component.\"},{\"clauseId\":\"5.1\",\"quote\":\"A held refund is not a denial. The customer is told what was not observed and may respond within 14 days.\"}],\"rationale\":\"All three kit components are MISSING with 0 of 1 observed, so no full or partial refund can be recommended and the case must remain HELD for review.\",\"lineNotes\":[{\"itemKey\":\"camera_body\",\"note\":\"Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip.\"},{\"itemKey\":\"lens\",\"note\":\"Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip.\"},{\"itemKey\":\"battery\",\"note\":\"Expected 1, observed 0 — MISSING; 0 of 1 seen in the tray during this clip.\"}]}"
+      }
+    ],
+    "effect": "none"
+  }
+}

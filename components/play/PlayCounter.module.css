@@ -1,0 +1,106 @@
+/* The /play seen-value counter. Tokens only; motion is CSS transitions + requestAnimationFrame (reduced-motion safe). */
+.counter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px 28px;
+  border-top: 5px solid var(--line);
+  background: var(--card);
+  padding: 16px 18px 18px;
+  min-width: 0;
+}
+@media (min-width: 640px) {
+  .counter { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  .state { border-left: 1px solid var(--hair); padding-left: 24px; }
+}
+.counter > * { min-width: 0; }
+
+.figure { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.eyebrow { margin: 0; font-weight: 500; }
+
+.numberRow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.number {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 104px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  color: var(--ink);
+  transition: color 0.6s ease, transform 0.6s ease;
+}
+.number[data-dir="up"] { color: var(--success); transform: translateY(-3px); transition-duration: 0.12s; }
+.number[data-dir="down"] { color: var(--danger); transform: translateY(3px); transition-duration: 0.12s; }
+
+.delta {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border: 2px solid currentColor;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.delta[data-dir="up"] { color: var(--success); }
+.delta[data-dir="down"] { color: var(--danger); }
+.delta[data-show] { opacity: 1; transform: none; transition-duration: 0.12s; }
+
+.of { margin: 0; font-size: 18px; line-height: 1.35; color: var(--muted); }
+.of strong { color: var(--ink); }
+
+.bar {
+  display: flex;
+  gap: 3px;
+  height: 14px;
+  margin-top: 6px;
+  max-width: 520px;
+}
+.seg {
+  position: relative;
+  flex-basis: 0;
+  min-width: 10px;
+  border: 1px solid var(--hair);
+  background: var(--card-2);
+  overflow: hidden;
+}
+.fill {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--ink);
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+.fill[data-seen] { transform: scaleX(1); }
+.fill[data-status="OK"] { background: var(--success); }
+.fill[data-status="HELD"] { background: var(--accent); }
+.fill[data-status="EXTRA"] { background: var(--warning); }
+
+.clear { margin: 0; font-size: 15px; color: var(--muted); }
+.clear .mono { color: var(--ink); font-weight: 700; }
+
+.state { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; }
+.state :global(.sticker-held), .state :global(.sticker-ok) { font-size: clamp(22px, 2.6vw, 30px); }
+.stateLine { margin: 0; font-size: 16px; line-height: 1.45; max-width: 46ch; }
+.open {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  width: 100%;
+}
+.open li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.open li :global(.st) { font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .number, .delta, .fill { transition: none; }
+  .number[data-dir], .delta[data-show] { transform: none; }
+}

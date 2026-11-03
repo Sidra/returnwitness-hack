@@ -1,0 +1,179 @@
+{
+  "recordedAt": "recorded",
+  "kind": "wonder",
+  "clipId": "gate-g1",
+  "data": {
+    "model": "muse-wonder-1.0",
+    "mode": "LIVE_META",
+    "protocol": "tools",
+    "draft": {
+      "recommendation": "APPROVE_FULL",
+      "proposedRefundCents": 34000,
+      "citedClauses": [
+        {
+          "clauseId": "4.2",
+          "quote": "A kit is refunded in full only when every component listed on the packing slip is returned."
+        }
+      ],
+      "rationale": "All three packing-slip lines are OK with 1 of 1 observed, so the complete kit was returned and the full requested refund of 34000 cents is supported pending human approval.",
+      "lineNotes": [
+        {
+          "itemKey": "camera_body",
+          "note": "1 of 1 seen settling in the tray, status OK."
+        },
+        {
+          "itemKey": "lens",
+          "note": "1 of 1 seen settling in the tray, status OK."
+        },
+        {
+          "itemKey": "battery",
+          "note": "1 of 1 seen settling in the tray, status OK."
+        }
+      ]
+    },
+    "latencyMs": 8130,
+    "requestIds": [
+      "chatcmpl-01a1a26f-16dc-77f7-bfc8-3e22ddea3fc4",
+      "chatcmpl-01a1a26f-249c-7044-9f82-939db8eeb5be",
+      "chatcmpl-01a1a26f-2e2d-703e-8cff-6242805bc76f"
+    ],
+    "steps": [
+      {
+        "kind": "tool_call",
+        "name": "read_reconciliation",
+        "args": {}
+      },
+      {
+        "kind": "tool_result",
+        "name": "read_reconciliation",
+        "result": {
+          "rmaId": "AB-G1",
+          "state": "AwaitingApproval",
+          "requestedRefundCents": 34000,
+          "evidence_digest": "23adfc3589505ce3",
+          "lines": [
+            {
+              "itemKey": "camera_body",
+              "description": "Camera body",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 19900
+            },
+            {
+              "itemKey": "lens",
+              "description": "Zoom lens",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 10900
+            },
+            {
+              "itemKey": "battery",
+              "description": "Battery + charger",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 3200
+            }
+          ],
+          "allClear": true,
+          "policy": [
+            {
+              "clauseId": "1.1",
+              "title": "Return window",
+              "text": "Items may be returned within 30 days of delivery."
+            },
+            {
+              "clauseId": "2.1",
+              "title": "Condition",
+              "text": "Items must be returned in resalable condition with all accessories and packaging inserts."
+            },
+            {
+              "clauseId": "3.1",
+              "title": "Inspection",
+              "text": "Every return routed to an inspection bench is opened on camera before any refund is issued."
+            },
+            {
+              "clauseId": "4.1",
+              "title": "Kits",
+              "text": "Each component of a kit is listed as its own line on the packing slip."
+            },
+            {
+              "clauseId": "4.2",
+              "title": "Complete kits",
+              "text": "A kit is refunded in full only when every component listed on the packing slip is returned."
+            },
+            {
+              "clauseId": "4.3",
+              "title": "Incomplete kits",
+              "text": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+            },
+            {
+              "clauseId": "4.4",
+              "title": "Serialised components",
+              "text": "A serialised component must carry the serial recorded on the packing slip."
+            },
+            {
+              "clauseId": "5.1",
+              "title": "Holds are not denials",
+              "text": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+            },
+            {
+              "clauseId": "6.1",
+              "title": "Refund method",
+              "text": "Approved refunds are issued to the original payment method."
+            }
+          ],
+          "voice_note": null
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "AWAITING_APPROVAL",
+          "evidence_digest": "23adfc3589505ce3",
+          "reason": "Every line is OK and the full kit was observed, so the case can proceed to human approval."
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "AWAITING_APPROVAL",
+          "evidence_digest": "23adfc3589505ce3",
+          "reason": "Every line is OK and the full kit was observed, so the case can proceed to human approval."
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: no change (already waiting for a person)"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "propose_transition",
+        "result": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: no change (already waiting for a person)"
+        }
+      },
+      {
+        "kind": "final",
+        "text": "{\"recommendation\":\"APPROVE_FULL\",\"proposedRefundCents\":34000,\"citedClauses\":[{\"clauseId\":\"4.2\",\"quote\":\"A kit is refunded in full only when every component listed on the packing slip is returned.\"}],\"rationale\":\"All three packing-slip lines are OK with 1 of 1 observed, so the complete kit was returned and the full requested refund of 34000 cents is supported pending human approval.\",\"lineNotes\":[{\"itemKey\":\"camera_body\",\"note\":\"1 of 1 seen settling in the tray, status OK.\"},{\"itemKey\":\"lens\",\"note\":\"1 of 1 seen settling in the tray, status OK.\"},{\"itemKey\":\"battery\",\"note\":\"1 of 1 seen settling in the tray, status OK.\"}]}"
+      }
+    ],
+    "effect": "none"
+  }
+}

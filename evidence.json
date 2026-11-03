@@ -1,0 +1,582 @@
+{
+  "note": "One run record for every number. Append-only; `current` names the run each surface quotes.",
+  "current": {
+    "demo": "demo_1",
+    "gate": "gate_calibrated_replay_1"
+  },
+  "runs": [
+    {
+      "runId": "demo_2",
+      "kind": "demo",
+      "at": "recorded",
+      "gitHash": null,
+      "mode": "RECORDED_FIXTURE",
+      "summary": {
+        "base": "http://localhost:3700",
+        "heldCents": 34000,
+        "heldState": "Held",
+        "refundId": "re_3UVEA7Rdtgp6wdIh1ZNzckcn",
+        "refundCents": 34000,
+        "feeCents": 200,
+        "feePaymentIntent": "pi_3UVEADRdtgp6wdIh1Jafoeur",
+        "webhookEvent": "charge.refunded",
+        "replayStatus": 409
+      },
+      "details": {
+        "held": {
+          "caseId": "case_963893d7",
+          "rmaId": "RMA-20418",
+          "state": "Held",
+          "counts": {
+            "camera_body": 1,
+            "lens": 0,
+            "battery": 1
+          },
+          "rawTrackIdsPerItem": {
+            "camera_body": 2,
+            "lens": 0,
+            "battery": 1
+          },
+          "lines": [
+            {
+              "item": "camera_body",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "lens",
+              "expected": 1,
+              "seen": 0,
+              "status": "MISSING"
+            },
+            {
+              "item": "battery",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            }
+          ],
+          "heldCents": 34000,
+          "draft": {
+            "recommendation": "HOLD",
+            "source": "template",
+            "clauses": [
+              "4.2",
+              "4.3"
+            ]
+          },
+          "timings": [
+            {
+              "stage": "segment",
+              "ms": 0.511,
+              "mode": "RECORDED_FIXTURE",
+              "model": "synthetic"
+            },
+            {
+              "stage": "count",
+              "ms": 0.756,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "reconcile",
+              "ms": 0.185,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "draft",
+              "ms": 2.687,
+              "mode": "DETERMINISTIC"
+            }
+          ],
+          "segmentationMode": "RECORDED_FIXTURE"
+        },
+        "refunded": {
+          "caseId": "case_f2fb0b01",
+          "rmaId": "RMA-20419",
+          "state": "Refunded",
+          "counts": {
+            "camera_body": 1,
+            "lens": 1,
+            "battery": 1
+          },
+          "rawTrackIdsPerItem": {
+            "camera_body": 1,
+            "lens": 2,
+            "battery": 1
+          },
+          "lines": [
+            {
+              "item": "camera_body",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "lens",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "battery",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            }
+          ],
+          "heldCents": 0,
+          "draft": {
+            "recommendation": "APPROVE_FULL",
+            "source": "template",
+            "clauses": [
+              "4.2"
+            ]
+          },
+          "timings": [
+            {
+              "stage": "segment",
+              "ms": 0.306,
+              "mode": "RECORDED_FIXTURE",
+              "model": "synthetic"
+            },
+            {
+              "stage": "count",
+              "ms": 0.436,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "reconcile",
+              "ms": 0.038,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "draft",
+              "ms": 0.043,
+              "mode": "DETERMINISTIC"
+            }
+          ],
+          "segmentationMode": "RECORDED_FIXTURE",
+          "refund": {
+            "refundId": "re_3UVEA7Rdtgp6wdIh1ZNzckcn",
+            "status": "succeeded",
+            "amountCents": 34000,
+            "chargeId": "ch_3UVEA7Rdtgp6wdIh1jY1apo1",
+            "paymentIntentId": "pi_3UVEA7Rdtgp6wdIh1Tho7Jm0",
+            "receiptUrl": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xVDZZcXhSZHRncDZ3ZEloKJ6-g9cGMgZD12m6plU6LBZsEU69jy2mtXyTrl9QZGFDn-kAVIv_DFFiqjptBPztpBR0d-IjCFZe9s7S",
+            "createdAt": "recorded",
+            "livemode": false,
+            "fee": {
+              "paymentIntentId": "pi_3UVEADRdtgp6wdIh1Jafoeur",
+              "chargeId": "ch_3UVEADRdtgp6wdIh1tI2FYIO",
+              "amountCents": 200,
+              "receiptUrl": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xVDZZcXhSZHRncDZ3ZEloKJ6-g9cGMgaUVWFndCM6LBZKl5mIZgc4CL1k8yMQxzKjbdOcG3408OzkCho7wahLs3iDTeYwzicmUuNU"
+            },
+            "event": {
+              "id": "evt_3UVEA7Rdtgp6wdIh1vlfd6gN",
+              "type": "charge.refunded"
+            }
+          }
+        }
+      }
+    },
+    {
+      "runId": "demo_1",
+      "kind": "demo",
+      "at": "recorded",
+      "gitHash": null,
+      "mode": "RECORDED_FIXTURE",
+      "summary": {
+        "base": "http://localhost:3700",
+        "heldCents": 34000,
+        "heldState": "Held",
+        "refundId": "re_3UVEPRRdtgp6wdIh1AzxybOf",
+        "refundCents": 34000,
+        "feeCents": 200,
+        "feePaymentIntent": "pi_3UVEPTRdtgp6wdIh1ctcJrr9",
+        "webhookEvent": "charge.refunded",
+        "replayStatus": 409,
+        "partialRefundId": "re_3UVEA6Rdtgp6wdIh0fx9p6kf",
+        "partialRefundCents": 23100,
+        "partialHeldCents": 10900
+      },
+      "details": {
+        "held": {
+          "caseId": "case_3d18608d",
+          "rmaId": "RMA-20418",
+          "state": "Held",
+          "counts": {
+            "camera_body": 1,
+            "lens": 0,
+            "battery": 1
+          },
+          "rawTrackIdsPerItem": {
+            "camera_body": 2,
+            "lens": 0,
+            "battery": 1
+          },
+          "lines": [
+            {
+              "item": "camera_body",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "lens",
+              "expected": 1,
+              "seen": 0,
+              "status": "MISSING"
+            },
+            {
+              "item": "battery",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            }
+          ],
+          "heldCents": 34000,
+          "draft": {
+            "recommendation": "HOLD",
+            "source": "template",
+            "clauses": [
+              "4.2",
+              "4.3"
+            ]
+          },
+          "timings": [
+            {
+              "stage": "segment",
+              "ms": 0.462,
+              "mode": "RECORDED_FIXTURE",
+              "model": "synthetic"
+            },
+            {
+              "stage": "count",
+              "ms": 0.697,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "reconcile",
+              "ms": 0.161,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "draft",
+              "ms": 0.169,
+              "mode": "DETERMINISTIC"
+            }
+          ],
+          "segmentationMode": "RECORDED_FIXTURE"
+        },
+        "partial": {
+          "refundId": "re_3UVEA6Rdtgp6wdIh0fx9p6kf",
+          "amountCents": 23100,
+          "state": "Refunded",
+          "approver": "Rita Calder",
+          "note": "partial under clause 4.3: zoom lens not returned"
+        },
+        "refunded": {
+          "caseId": "case_2ad6eea0",
+          "rmaId": "RMA-20419",
+          "state": "Refunded",
+          "counts": {
+            "camera_body": 1,
+            "lens": 1,
+            "battery": 1
+          },
+          "rawTrackIdsPerItem": {
+            "camera_body": 1,
+            "lens": 2,
+            "battery": 1
+          },
+          "lines": [
+            {
+              "item": "camera_body",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "lens",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            },
+            {
+              "item": "battery",
+              "expected": 1,
+              "seen": 1,
+              "status": "OK"
+            }
+          ],
+          "heldCents": 0,
+          "draft": {
+            "recommendation": "APPROVE_FULL",
+            "source": "template",
+            "clauses": [
+              "4.2"
+            ]
+          },
+          "timings": [
+            {
+              "stage": "segment",
+              "ms": 0.281,
+              "mode": "RECORDED_FIXTURE",
+              "model": "synthetic"
+            },
+            {
+              "stage": "count",
+              "ms": 0.762,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "reconcile",
+              "ms": 0.048,
+              "mode": "DETERMINISTIC"
+            },
+            {
+              "stage": "draft",
+              "ms": 0.027,
+              "mode": "DETERMINISTIC"
+            }
+          ],
+          "segmentationMode": "RECORDED_FIXTURE",
+          "refund": {
+            "refundId": "re_3UVEPRRdtgp6wdIh1AzxybOf",
+            "status": "succeeded",
+            "amountCents": 34000,
+            "chargeId": "ch_3UVEPRRdtgp6wdIh1CP6tUmu",
+            "paymentIntentId": "pi_3UVEPRRdtgp6wdIh1ICzx9Wo",
+            "receiptUrl": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xVDZZcXhSZHRncDZ3ZEloKNDFg9cGMgaOUR0mG4o6LBZLWoevDg8KfPNLRyQSZ4Z22YvfOahZc0FZ32lMxigjhiCsDELNncyqVQmd",
+            "createdAt": "recorded",
+            "livemode": false,
+            "fee": {
+              "paymentIntentId": "pi_3UVEPTRdtgp6wdIh1ctcJrr9",
+              "chargeId": "ch_3UVEPTRdtgp6wdIh1dfBXWz6",
+              "amountCents": 200,
+              "receiptUrl": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xVDZZcXhSZHRncDZ3ZEloKNDFg9cGMgat_tsJSv86LBa8JPjQMtXD5-JAtFweq5vAiHLAkgD7eqfZsb-hcU0lXkrUzD6UsM8fvxhP"
+            },
+            "event": {
+              "id": "evt_3UVEPRRdtgp6wdIh1N1sUVGy",
+              "type": "charge.refunded"
+            }
+          }
+        }
+      }
+    },
+    {
+      "runId": "gate_1",
+      "kind": "gate",
+      "at": "recorded",
+      "gitHash": null,
+      "mode": "LIVE_META",
+      "summary": {
+        "verdict": "INCOMPLETE",
+        "sizes": "estimates",
+        "clips": 2,
+        "passed": 2,
+        "notRun": [
+          "g2",
+          "g3",
+          "g4",
+          "g5",
+          "g6",
+          "g7",
+          "g8"
+        ],
+        "frames": 272,
+        "estUsd": 0.3264
+      },
+      "details": [
+        {
+          "clipId": "g0",
+          "pass": true,
+          "failures": [],
+          "perItem": [
+            {
+              "itemKey": "camera_body",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            },
+            {
+              "itemKey": "lens",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            },
+            {
+              "itemKey": "battery",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            }
+          ],
+          "holdCodes": [],
+          "latencyMs": 9541,
+          "frames": 80,
+          "samIds": {
+            "camera_body": 0,
+            "lens": 0,
+            "battery": 0
+          }
+        },
+        {
+          "clipId": "g1",
+          "pass": true,
+          "failures": [],
+          "perItem": [
+            {
+              "itemKey": "camera_body",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": [
+                "merged_mask",
+                "merged_mask",
+                "merged_mask"
+              ]
+            },
+            {
+              "itemKey": "lens",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": [
+                "merged_mask",
+                "merged_mask",
+                "merged_mask"
+              ]
+            },
+            {
+              "itemKey": "battery",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": [
+                "merged_mask",
+                "merged_mask",
+                "merged_mask",
+                "merged_mask"
+              ]
+            }
+          ],
+          "holdCodes": [
+            "merged_mask"
+          ],
+          "latencyMs": 17128,
+          "frames": 192,
+          "samIds": {
+            "camera_body": 1,
+            "lens": 1,
+            "battery": 1
+          }
+        }
+      ]
+    },
+    {
+      "runId": "gate_calibrated_replay_1",
+      "kind": "gate",
+      "at": "recorded",
+      "gitHash": null,
+      "mode": "RECORDED_FIXTURE",
+      "summary": {
+        "verdict": "INCOMPLETE",
+        "sizes": "calibrated",
+        "clips": 1,
+        "passed": 1,
+        "notRun": [
+          "g2",
+          "g3",
+          "g4",
+          "g5",
+          "g6",
+          "g7",
+          "g8"
+        ],
+        "notScored": [
+          "g1"
+        ]
+      },
+      "details": [
+        {
+          "clipId": "g0",
+          "pass": true,
+          "failures": [],
+          "perItem": [
+            {
+              "itemKey": "camera_body",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            },
+            {
+              "itemKey": "lens",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            },
+            {
+              "itemKey": "battery",
+              "expected": 0,
+              "arrivals": 0,
+              "samIds": 0,
+              "held": []
+            }
+          ],
+          "holdCodes": [],
+          "frames": 80,
+          "samIds": {
+            "camera_body": 0,
+            "lens": 0,
+            "battery": 0
+          },
+          "scored": true
+        },
+        {
+          "clipId": "g1",
+          "pass": true,
+          "failures": [],
+          "perItem": [
+            {
+              "itemKey": "camera_body",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": []
+            },
+            {
+              "itemKey": "lens",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": []
+            },
+            {
+              "itemKey": "battery",
+              "expected": 1,
+              "arrivals": 1,
+              "samIds": 1,
+              "held": []
+            }
+          ],
+          "holdCodes": [],
+          "frames": 192,
+          "samIds": {
+            "camera_body": 1,
+            "lens": 1,
+            "battery": 1
+          },
+          "scored": false,
+          "note": "calibration clip, not scored"
+        }
+      ]
+    }
+  ]
+}

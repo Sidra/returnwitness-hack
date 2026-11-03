@@ -1,0 +1,49 @@
+{
+  "recordedAt": "recorded",
+  "kind": "spark",
+  "clipId": "gate-g1",
+  "meta": {
+    "model": "muse-spark-1.3",
+    "requestId": "chatcmpl-01a1a26f-0e52-75c0-aa57-d94d68382273"
+  },
+  "data": {
+    "lines": [
+      {
+        "itemKey": "camera_body",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed settled in tray matches 1 expected; serial BW-CB-55120 matches packing slip"
+          }
+        ],
+        "serialRead": "BW-CB-55120"
+      },
+      {
+        "itemKey": "lens",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed settled in tray matches 1 expected; serial BW-LN-80311 matches packing slip"
+          }
+        ],
+        "serialRead": "BW-LN-80311"
+      },
+      {
+        "itemKey": "battery",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed settled in tray matches 1 expected"
+          }
+        ]
+      }
+    ],
+    "notes": ""
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "version": "same-input-ab/1",
+  "runId": "ab_1",
+  "at": "recorded",
+  "gitHash": null,
+  "promptSha256": "db19d8212987cd527991dd1087c333f068951fa9038e26f08a14604a1b7b8a31",
+  "model": "muse-spark-1.3",
+  "rows": [
+    {
+      "clipId": "g0",
+      "truth": "must_hold",
+      "armA": {
+        "decision": "hold",
+        "outcome": "correct_hold",
+        "missingItemKeys": [
+          "camera_body",
+          "lens",
+          "battery"
+        ],
+        "reason": "No packing-slip items were observed on the inspection tray in any key frame 3.2s-15.2s. Box remains on left unopened, tray on right remains empty throughout, so presence of camera_body, lens, and battery cannot be confirmed and serials cannot be verified.",
+        "latencyMs": 9339,
+        "requestId": "chatcmpl-01a1a26e-db27-744c-b1a4-f772f169c340"
+      },
+      "armB": {
+        "decision": "hold",
+        "outcome": "correct_hold",
+        "state": "Held",
+        "holdCodes": [
+          "not_observed"
+        ],
+        "caseId": "case_da47378b",
+        "source": "gate run's SAM output + live Spark + Wonder"
+      }
+    },
+    {
+      "clipId": "g1",
+      "truth": "complete",
+      "armA": {
+        "decision": "refund",
+        "outcome": "correct_refund",
+        "missingItemKeys": [],
+        "reason": "All 3 packing-slip items seen on inspection tray by final frame 36.4s: camera_body with tag BW-CB-55120 matching slip, lens with tag BW-LN-80311 matching slip, and battery+charger unit. Box contains only packing paper. Kit is complete per policy 4.2.",
+        "latencyMs": 19542,
+        "requestId": "chatcmpl-01a1a26f-7bbe-77f2-9b3b-65ed92c43a6c"
+      },
+      "armB": {
+        "decision": "refund",
+        "outcome": "correct_refund",
+        "state": "AwaitingApproval",
+        "holdCodes": [],
+        "caseId": "case_c5c369b8",
+        "source": "gate run's SAM output + live Spark + Wonder"
+      }
+    },
+    {
+      "clipId": "d1",
+      "truth": "must_hold",
+      "armA": {
+        "decision": "hold",
+        "outcome": "correct_hold",
+        "missingItemKeys": [
+          "lens"
+        ],
+        "reason": "Packing slip lists 3 items. Camera body SN BW-CB-55107 observed in box at 4.3s and on tray 9.6-20.2s with matching serial tag. Battery+charger unit (black dual charger) observed in box at 4.3s and on tray 14.9-20.2s. Zoom lens SN BW-LN-80298 never visible in box or on inspection tray; final box at 20.2s contains only packing paper. Per policy 4.2-4.3 kit is incomplete, refund held for review.",
+        "latencyMs": 17883,
+        "requestId": "chatcmpl-01a1a26f-c27c-7031-887b-30ec32a5c61d"
+      },
+      "armB": {
+        "decision": "hold",
+        "outcome": "correct_hold",
+        "state": "Held",
+        "holdCodes": [
+          "count_match",
+          "stand_in_suspected",
+          "model_disagrees",
+          "not_observed"
+        ],
+        "caseId": "case_42b87cee",
+        "source": "live inspection (step 2)"
+      }
+    },
+    {
+      "clipId": "d2",
+      "truth": "complete",
+      "armA": {
+        "decision": "refund",
+        "outcome": "correct_refund",
+        "missingItemKeys": [],
+        "reason": "All 3 packing-slip items observed on inspection tray: camera_body with serial BW-CB-55120, lens with serial BW-LN-80311, and battery + charger unit. Serials match slip per 4.4, kit complete per 4.2.",
+        "latencyMs": 10666,
+        "requestId": "chatcmpl-01a1a26f-ed5f-7721-a124-b0ebfe8775bd"
+      },
+      "armB": {
+        "decision": "hold",
+        "outcome": "false_hold",
+        "state": "Held",
+        "holdCodes": [
+          "count_match",
+          "stand_in_suspected"
+        ],
+        "caseId": "case_cb26eff8",
+        "source": "live inspection (step 2)"
+      }
+    }
+  ],
+  "totals": {
+    "armA": {
+      "clips": 4,
+      "wrongRefunds": 0,
+      "falseHolds": 0,
+      "noAnswer": 0,
+      "correct": 4
+    },
+    "armB": {
+      "clips": 4,
+      "wrongRefunds": 0,
+      "falseHolds": 1,
+      "noAnswer": 0,
+      "correct": 3
+    }
+  },
+  "costUsd": {
+    "armA": 0.0543,
+    "armB": 0.1182
+  },
+  "notFilmed": [
+    "g2",
+    "g3",
+    "g4",
+    "g5",
+    "g6",
+    "g7",
+    "g8",
+    "d3"
+  ],
+  "calibrationClip": "g1",
+  "totalsWithoutCalibration": {
+    "armA": {
+      "clips": 3,
+      "wrongRefunds": 0,
+      "falseHolds": 0,
+      "noAnswer": 0,
+      "correct": 3
+    },
+    "armB": {
+      "clips": 3,
+      "wrongRefunds": 0,
+      "falseHolds": 1,
+      "noAnswer": 0,
+      "correct": 2
+    }
+  }
+}

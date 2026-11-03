@@ -1,0 +1,282 @@
+{
+  "recordedAt": "recorded",
+  "kind": "wonder",
+  "clipId": "d1-rma-20418-lens-missing",
+  "data": {
+    "model": "muse-wonder-1.0",
+    "mode": "LIVE_META",
+    "protocol": "tools",
+    "draft": {
+      "recommendation": "HOLD",
+      "proposedRefundCents": 0,
+      "citedClauses": [
+        {
+          "clauseId": "4.2",
+          "quote": "A kit is refunded in full only when every component listed on the packing slip is returned."
+        },
+        {
+          "clauseId": "4.3",
+          "quote": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+        },
+        {
+          "clauseId": "5.1",
+          "quote": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+        }
+      ],
+      "rationale": "Not all lines are OK: camera_body is HELD because the observed item is described as a light-green toy truck, not a camera body, and lens is MISSING, so the kit is incomplete and must be held for review. Evidence requests are open for both non-OK lines.",
+      "lineNotes": [
+        {
+          "itemKey": "camera_body",
+          "note": "HELD: 1 observed but audit notes item is a light-green toy truck, not a camera body; label close-up requested."
+        },
+        {
+          "itemKey": "lens",
+          "note": "MISSING: 0 of 1 seen in the tray; spoken observation requested."
+        },
+        {
+          "itemKey": "battery",
+          "note": "OK: 1 of 1 seen settling in the tray."
+        }
+      ]
+    },
+    "latencyMs": 19007,
+    "requestIds": [
+      "chatcmpl-01a1a268-a0af-7528-9981-743f1b1baf76",
+      "chatcmpl-01a1a268-b9ac-7638-a547-1683eb5b9888",
+      "chatcmpl-01a1a268-ca23-7598-8897-4b62ea5d938f",
+      "chatcmpl-01a1a268-e06a-72c6-9348-1a87a6adcf15"
+    ],
+    "steps": [
+      {
+        "kind": "tool_call",
+        "name": "read_reconciliation",
+        "args": {}
+      },
+      {
+        "kind": "tool_result",
+        "name": "read_reconciliation",
+        "result": {
+          "rmaId": "RMA-20418",
+          "state": "Held",
+          "requestedRefundCents": 34000,
+          "evidence_digest": "28d36d5299206d43",
+          "lines": [
+            {
+              "itemKey": "camera_body",
+              "description": "Camera body",
+              "expected": 1,
+              "observed": 1,
+              "status": "HELD",
+              "reasons": [
+                "1 of 1 seen settling in the tray",
+                "muse-spark-open (baseten): open-weight audit: Label BW-CB-55107 is legible but item is a light-green toy truck, not a camera body.",
+                "muse-glimmer (modal) said OK (1); the counter's HELD stands: a model can't clear a hold"
+              ],
+              "unitPriceCents": 19900
+            },
+            {
+              "itemKey": "lens",
+              "description": "Zoom lens",
+              "expected": 1,
+              "observed": 0,
+              "status": "MISSING",
+              "reasons": [
+                "0 of 1 seen in the tray during this clip"
+              ],
+              "unitPriceCents": 10900
+            },
+            {
+              "itemKey": "battery",
+              "description": "Battery + charger",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 3200
+            }
+          ],
+          "allClear": false,
+          "policy": [
+            {
+              "clauseId": "1.1",
+              "title": "Return window",
+              "text": "Items may be returned within 30 days of delivery."
+            },
+            {
+              "clauseId": "2.1",
+              "title": "Condition",
+              "text": "Items must be returned in resalable condition with all accessories and packaging inserts."
+            },
+            {
+              "clauseId": "3.1",
+              "title": "Inspection",
+              "text": "Every return routed to an inspection bench is opened on camera before any refund is issued."
+            },
+            {
+              "clauseId": "4.1",
+              "title": "Kits",
+              "text": "Each component of a kit is listed as its own line on the packing slip."
+            },
+            {
+              "clauseId": "4.2",
+              "title": "Complete kits",
+              "text": "A kit is refunded in full only when every component listed on the packing slip is returned."
+            },
+            {
+              "clauseId": "4.3",
+              "title": "Incomplete kits",
+              "text": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+            },
+            {
+              "clauseId": "4.4",
+              "title": "Serialised components",
+              "text": "A serialised component must carry the serial recorded on the packing slip."
+            },
+            {
+              "clauseId": "5.1",
+              "title": "Holds are not denials",
+              "text": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+            },
+            {
+              "clauseId": "6.1",
+              "title": "Refund method",
+              "text": "Approved refunds are issued to the original payment method."
+            }
+          ],
+          "voice_note": null
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "28d36d5299206d43",
+          "reason": "Lines not all OK: camera_body HELD (item observed is a toy truck, not a camera body) and lens MISSING; kit incomplete, so hold for review."
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "28d36d5299206d43",
+          "reason": "Lines not all OK: camera_body HELD (item observed is a toy truck, not a camera body) and lens MISSING; kit incomplete, so hold for review."
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "propose_transition",
+        "result": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "request_evidence",
+        "args": {
+          "itemKey": "camera_body",
+          "kind": "label_closeup",
+          "reason": "A close-up of the label and item could settle whether the returned item is a camera body or a toy truck.",
+          "evidence_digest": "28d36d5299206d43"
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "request_evidence",
+        "args": {
+          "itemKey": "camera_body",
+          "kind": "label_closeup",
+          "reason": "A close-up of the label and item could settle whether the returned item is a camera body or a toy truck.",
+          "evidence_digest": "28d36d5299206d43"
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a close-up of the label for camera_body (HELD) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "request_evidence",
+        "result": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a close-up of the label for camera_body (HELD) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "request_evidence",
+        "args": {
+          "itemKey": "lens",
+          "kind": "spoken_observation",
+          "reason": "A returns-lead observation could settle whether the missing lens was present anywhere in the return.",
+          "evidence_digest": "28d36d5299206d43"
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "request_evidence",
+        "args": {
+          "itemKey": "lens",
+          "kind": "spoken_observation",
+          "reason": "A returns-lead observation could settle whether the missing lens was present anywhere in the return.",
+          "evidence_digest": "28d36d5299206d43"
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a spoken observation from the returns lead for lens (MISSING) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "request_evidence",
+        "result": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a spoken observation from the returns lead for lens (MISSING) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "final",
+        "text": "{\"recommendation\":\"HOLD\",\"proposedRefundCents\":0,\"citedClauses\":[{\"clauseId\":\"4.2\",\"quote\":\"A kit is refunded in full only when every component listed on the packing slip is returned.\"},{\"clauseId\":\"4.3\",\"quote\":\"When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component.\"},{\"clauseId\":\"5.1\",\"quote\":\"A held refund is not a denial. The customer is told what was not observed and may respond within 14 days.\"}],\"rationale\":\"Not all lines are OK: camera_body is HELD because the observed item is described as a light-green toy truck, not a camera body, and lens is MISSING, so the kit is incomplete and must be held for review. Evidence requests are open for both non-OK lines.\",\"lineNotes\":[{\"itemKey\":\"camera_body\",\"note\":\"HELD: 1 observed but audit notes item is a light-green toy truck, not a camera body; label close-up requested.\"},{\"itemKey\":\"lens\",\"note\":\"MISSING: 0 of 1 seen in the tray; spoken observation requested.\"},{\"itemKey\":\"battery\",\"note\":\"OK: 1 of 1 seen settling in the tray.\"}]}"
+      }
+    ],
+    "effect": "none",
+    "evidenceRequests": [
+      {
+        "id": "evr_6a731b03",
+        "itemKey": "camera_body",
+        "kind": "label_closeup",
+        "reason": "A close-up of the label and item could settle whether the returned item is a camera body or a toy truck.",
+        "digest": "28d36d5299206d43",
+        "status": "open",
+        "requestedBy": "muse-wonder-1.0",
+        "mode": "LIVE_META",
+        "requestedAt": "recorded"
+      },
+      {
+        "id": "evr_707aae6e",
+        "itemKey": "lens",
+        "kind": "spoken_observation",
+        "reason": "A returns-lead observation could settle whether the missing lens was present anywhere in the return.",
+        "digest": "28d36d5299206d43",
+        "status": "open",
+        "requestedBy": "muse-wonder-1.0",
+        "mode": "LIVE_META",
+        "requestedAt": "recorded"
+      }
+    ]
+  }
+}

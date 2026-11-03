@@ -1,0 +1,55 @@
+{
+  "name": "bench label set · truth from the printed label design",
+  "generatedAt": "recorded",
+  "generator": "scripts/build-label-set.ts",
+  "seed": 20261029,
+  "splitSeed": 1729,
+  "fraction": 0.2,
+  "rows": 232,
+  "train": 150,
+  "heldout": 82,
+  "bySource": {
+    "correction": {
+      "train": 0,
+      "heldout": 0
+    },
+    "sheet": {
+      "train": 0,
+      "heldout": 40
+    },
+    "render": {
+      "train": 150,
+      "heldout": 42
+    },
+    "bench": {
+      "train": 0,
+      "heldout": 0
+    }
+  },
+  "distinctSerials": {
+    "train": 46,
+    "heldout": 18,
+    "heldoutReal": [
+      "BW-CB-55120",
+      "BW-LN-80311",
+      "BW-CB-55107",
+      "BW-LN-80298"
+    ]
+  },
+  "distinctLabels": {
+    "train": 52,
+    "heldout": 20
+  },
+  "unreadableSerialRows": 51,
+  "standInRows": 117,
+  "bench": {
+    "clipsFound": [],
+    "clipsMissing": [
+      "d1-rma-20418-lens-missing (clip + SAM recording missing)",
+      "d2-rma-20419-complete (clip + SAM recording missing)",
+      "d3-camera-reboxed (clip + SAM recording missing)"
+    ]
+  },
+  "leaked": [],
+  "floorProblems": []
+}

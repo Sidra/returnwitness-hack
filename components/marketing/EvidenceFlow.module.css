@@ -1,0 +1,69 @@
+/* The six-job evidence-to-decision flow (/how-it-works). Tokens only; both themes come from globals.css. */
+.flow { padding-top: 24px; }
+.head { display: grid; gap: 12px; border-top: 5px solid var(--line); padding-top: 24px; }
+.head h2 { margin: 0; max-width: 28ch; }
+.intro { max-width: 72ch; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.intro p { margin: 0; }
+
+/* The chain strip: the whole flow at a glance. */
+.chain { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--line); border-left: 1px solid var(--hair); }
+@media (min-width: 768px) { .chain { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .chain { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.chain > li { position: relative; min-width: 0; border-right: 1px solid var(--hair); border-bottom: 1px solid var(--hair); background: var(--card); }
+.chainBoundary { box-shadow: inset 0 4px 0 var(--accent); }
+@media (min-width: 1100px) {
+  .chain > li + li::before { content: "→"; position: absolute; left: 0; top: 22px; transform: translate(-50%, 0); z-index: 1; padding: 0 2px; background: var(--card); color: var(--accent); font-family: var(--font-mono); font-size: 15px; font-weight: 700; line-height: 1; }
+}
+.chainLink { display: grid; gap: 4px; min-height: 44px; height: 100%; padding: 14px 14px 16px; color: var(--ink); text-decoration: none; transition: background-color 160ms ease; }
+.chainLink:hover { background: var(--card-2); }
+.chainLink:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.chainN { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--accent); }
+.chainTitle { font-size: 17px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.chainWho { font-family: var(--font-mono); font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+
+.summary { margin-top: 20px; border: 2px solid var(--line); background: var(--card); padding: 16px 18px; font-size: 16px; line-height: 1.55; }
+.summary p { margin: 0; }
+.summary p + p { margin-top: 6px; }
+
+/* The steps. */
+.steps { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 0; }
+.step { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 16px; row-gap: 16px; padding: 22px 0 26px; border-top: 2px solid var(--line); min-width: 0; }
+@media (min-width: 768px) { .step { grid-template-columns: 64px minmax(0, 1fr); column-gap: 24px; } }
+@media (min-width: 1100px) { .step { grid-template-columns: 72px minmax(0, 0.9fr) minmax(0, 1.25fr); column-gap: 32px; } }
+.stepBoundary { border-top-color: var(--accent); box-shadow: inset 0 3px 0 var(--accent); }
+.rail { grid-row: span 2; position: relative; }
+@media (min-width: 1100px) { .rail { grid-row: auto; } }
+.rail::after { content: ""; position: absolute; left: 50%; top: 56px; bottom: -26px; width: 1px; background: var(--hair); }
+.step:last-child .rail::after { display: none; }
+.railN { display: block; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.stepBoundary .railN { color: var(--danger); }
+
+.what, .evidence { min-width: 0; }
+.evidence { grid-column: 2; display: grid; gap: 14px; align-content: start; }
+@media (min-width: 1100px) { .evidence { grid-column: 3; } }
+.title { margin: 0; font-size: clamp(20px, 2vw, 24px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+.job { margin: 8px 0 0; font-size: 16px; line-height: 1.55; }
+.limit { margin: 10px 0 0; padding-left: 12px; border-left: 3px solid var(--line); font-size: 15px; line-height: 1.5; font-weight: 600; }
+.stepBoundary .limit { border-left-color: var(--accent); }
+.onServer { margin-top: 14px; display: grid; gap: 6px; }
+.kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; font-size: 13px; line-height: 1.5; }
+.badges p { flex-basis: 100%; margin: 4px 0 0; font-size: 14px; line-height: 1.5; }
+.badges p:first-child { margin-top: 0; }
+.badges p :global(.mode) { font-size: 13px; vertical-align: baseline; }
+
+/* Measured numbers: as large as anything on the page, each with its provenance. */
+.facts { margin: 0; display: grid; gap: 0; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--hair); }
+@media (min-width: 560px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fact { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--hair); min-width: 0; }
+@media (min-width: 560px) { .fact:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--hair); } }
+.factLabel { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.factValue { margin: 4px 0 0; font-size: clamp(28px, 3.4vw, 38px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.factSource { margin: 6px 0 0; font-size: 13px; line-height: 1.45; color: var(--muted); overflow-wrap: anywhere; }
+
+.note { border-left: 1px solid var(--hair); padding-left: 14px; display: grid; gap: 6px; min-width: 0; }
+.noteWho { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.noteText { margin: 0; font-size: 15px; line-height: 1.55; overflow-wrap: anywhere; }
+.noteProv { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+.loss { margin: 0; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.noMeasure { margin: 0; font-size: 14px; color: var(--muted); }

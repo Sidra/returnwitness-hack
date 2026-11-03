@@ -1,0 +1,49 @@
+{
+  "name": "returnwitness",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3700",
+    "build": "next build",
+    "start": "next start -p 3700",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gate:run": "tsx scripts/gate/run-gate.ts",
+    "gate:synthetic": "tsx scripts/gate/run-gate.ts --synthetic",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "check": "next typegen && tsc --noEmit && eslint . --quiet && vitest run && next build",
+    "a11y": "node video/a11y.mjs",
+    "screens": "node video/screens.mjs",
+    "check:modal-web": "uv run -q --no-project -p 3.12 --with fastapi --with httpx --with pydantic --with opencv-python-headless --with \"numpy<2\" python -I modal/check_web.py",
+    "check:glimmer-web": "uv run -q --no-project -p 3.12 --with \"fastapi==0.136.3\" --with \"httpx==0.28.1\" python -I modal/check_glimmer_web.py"
+  },
+  "dependencies": {
+    "@meta-sam/parser": "0.1.0",
+    "@upstash/ratelimit": "^2.2.0",
+    "@upstash/redis": "^1.40.0",
+    "next": "16.4.3",
+    "openai": "^7.45.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "stripe": "^23.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^5.0.5",
+    "axe-core": "^4.14.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "playwright": "^1.64.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.5"
+  },
+  "description": "E-commerce returns inspection: kit-completeness check at the returns bench (return fraud, refund hold until a person approves) with Meta SAM 3.1, Muse Spark, Muse Wonder and a Stripe test refund rail"
+}

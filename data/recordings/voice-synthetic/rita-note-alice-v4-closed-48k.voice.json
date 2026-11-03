@@ -1,0 +1,15 @@
+{
+  "label": "a separate call on a synthetic voice note",
+  "note": "Scripted note read by a TTS voice (ElevenLabs Alice). Not part of any bench run; none of the builder's footage or voice.",
+  "audio": "rita-note-alice-v4-closed-48k.wav",
+  "transcript": "box came enclosed no lens inside just packing paper body and charger look fine",
+  "mode": "LIVE_META",
+  "model": "muse-voice-transcribe-1.0",
+  "latencyMs": 3929,
+  "audioDurationMs": 7040,
+  "requestId": "voyager/transcribe/E0C46646184D477A85C357F5CE7B6AF5",
+  "provenance": "live Muse Voice Transcribe call, 7.0 s of audio, 3929 ms",
+  "recordedAt": "recorded",
+  "synthetic": true,
+  "costUsd": 0.00034999999999999994
+}

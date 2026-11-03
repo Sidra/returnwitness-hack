@@ -1,0 +1,48 @@
+{
+  "recordedAt": "recorded",
+  "kind": "spark",
+  "clipId": "d1-rma-20418-lens-missing",
+  "meta": {
+    "model": "muse-spark-1.3",
+    "requestId": "chatcmpl-01a1a268-95f9-712f-9668-30696f1e5921"
+  },
+  "data": {
+    "lines": [
+      {
+        "itemKey": "camera_body",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "tray counter 1 and 1 seen settled in tray at 9.6s, 14.9s, 20.2s with matching serial"
+          }
+        ],
+        "serialRead": "BW-CB-55107"
+      },
+      {
+        "itemKey": "lens",
+        "observedQty": 0,
+        "status": "MISSING",
+        "reasons": [
+          {
+            "code": "not_observed",
+            "detail": "tray counter 0, no lens seen settled in tray or in box across key frames"
+          }
+        ]
+      },
+      {
+        "itemKey": "battery",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "tray counter 1 and 1 charger seen settled in tray at 14.9s and 20.2s"
+          }
+        ]
+      }
+    ],
+    "notes": ""
+  }
+}

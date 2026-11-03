@@ -1,0 +1,236 @@
+{
+  "recordedAt": "recorded",
+  "kind": "wonder",
+  "clipId": "d2-rma-20419-complete",
+  "data": {
+    "model": "muse-wonder-1.0",
+    "mode": "LIVE_META",
+    "protocol": "tools",
+    "draft": {
+      "recommendation": "HOLD",
+      "proposedRefundCents": 0,
+      "citedClauses": [
+        {
+          "clauseId": "4.2",
+          "quote": "A kit is refunded in full only when every component listed on the packing slip is returned."
+        },
+        {
+          "clauseId": "4.3",
+          "quote": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+        },
+        {
+          "clauseId": "5.1",
+          "quote": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+        }
+      ],
+      "rationale": "The camera_body line is not OK: the item observed under its legible label was reported as a toy car, not a camera body, so a kit component is effectively missing and the full kit refund cannot proceed. The case stays HELD for human review; a label close-up for camera_body was requested to confirm the mismatch.",
+      "lineNotes": [
+        {
+          "itemKey": "camera_body",
+          "note": "Not OK: observed item reported as a toy car rather than the expected camera body; held pending label close-up confirmation."
+        },
+        {
+          "itemKey": "lens",
+          "note": "OK: 1 of 1 seen settling in the tray."
+        },
+        {
+          "itemKey": "battery",
+          "note": "OK: 1 of 1 seen settling in the tray."
+        }
+      ]
+    },
+    "latencyMs": 19348,
+    "requestIds": [
+      "chatcmpl-01a1a26b-8ee6-723b-8b98-c67225049438",
+      "chatcmpl-01a1a26b-a8d8-7562-8448-b601042be2e4",
+      "chatcmpl-01a1a26b-bf4c-74fc-9183-8f103400fafe",
+      "chatcmpl-01a1a26b-cda1-7406-9ad0-58c095616316"
+    ],
+    "steps": [
+      {
+        "kind": "tool_call",
+        "name": "read_reconciliation",
+        "args": {}
+      },
+      {
+        "kind": "tool_result",
+        "name": "read_reconciliation",
+        "result": {
+          "rmaId": "RMA-20419",
+          "state": "Held",
+          "requestedRefundCents": 34000,
+          "evidence_digest": "8e3dd064fafe934c",
+          "lines": [
+            {
+              "itemKey": "camera_body",
+              "description": "Camera body",
+              "expected": 1,
+              "observed": 1,
+              "status": "HELD",
+              "reasons": [
+                "1 of 1 seen settling in the tray",
+                "muse-spark-open (baseten): open-weight audit: Label BM-CB-55120 is legible but item is a toy car, not a camera body."
+              ],
+              "unitPriceCents": 19900
+            },
+            {
+              "itemKey": "lens",
+              "description": "Zoom lens",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 10900
+            },
+            {
+              "itemKey": "battery",
+              "description": "Battery + charger",
+              "expected": 1,
+              "observed": 1,
+              "status": "OK",
+              "reasons": [
+                "1 of 1 seen settling in the tray"
+              ],
+              "unitPriceCents": 3200
+            }
+          ],
+          "allClear": false,
+          "policy": [
+            {
+              "clauseId": "1.1",
+              "title": "Return window",
+              "text": "Items may be returned within 30 days of delivery."
+            },
+            {
+              "clauseId": "2.1",
+              "title": "Condition",
+              "text": "Items must be returned in resalable condition with all accessories and packaging inserts."
+            },
+            {
+              "clauseId": "3.1",
+              "title": "Inspection",
+              "text": "Every return routed to an inspection bench is opened on camera before any refund is issued."
+            },
+            {
+              "clauseId": "4.1",
+              "title": "Kits",
+              "text": "Each component of a kit is listed as its own line on the packing slip."
+            },
+            {
+              "clauseId": "4.2",
+              "title": "Complete kits",
+              "text": "A kit is refunded in full only when every component listed on the packing slip is returned."
+            },
+            {
+              "clauseId": "4.3",
+              "title": "Incomplete kits",
+              "text": "When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component."
+            },
+            {
+              "clauseId": "4.4",
+              "title": "Serialised components",
+              "text": "A serialised component must carry the serial recorded on the packing slip."
+            },
+            {
+              "clauseId": "5.1",
+              "title": "Holds are not denials",
+              "text": "A held refund is not a denial. The customer is told what was not observed and may respond within 14 days."
+            },
+            {
+              "clauseId": "6.1",
+              "title": "Refund method",
+              "text": "Approved refunds are issued to the original payment method."
+            }
+          ],
+          "voice_note": null
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "8e3dd064fafe934c",
+          "reason": "camera_body line is not OK: observed item reported as a toy car, not a camera body, so the kit is not complete and evidence must be held for review."
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "propose_transition",
+        "args": {
+          "to_state": "HELD",
+          "evidence_digest": "8e3dd064fafe934c",
+          "reason": "camera_body line is not OK: observed item reported as a toy car, not a camera body, so the kit is not complete and evidence must be held for review."
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "propose_transition",
+        "result": {
+          "accepted": true,
+          "effect": "none",
+          "reason": "accepted: the case is already held"
+        }
+      },
+      {
+        "kind": "tool_call",
+        "name": "request_evidence",
+        "args": {
+          "evidence_digest": "8e3dd064fafe934c",
+          "itemKey": "camera_body",
+          "kind": "label_closeup",
+          "reason": "A label close-up would confirm whether the BM-CB-55120 label is attached to a toy car rather than the expected camera body."
+        }
+      },
+      {
+        "kind": "guard",
+        "name": "request_evidence",
+        "args": {
+          "evidence_digest": "8e3dd064fafe934c",
+          "itemKey": "camera_body",
+          "kind": "label_closeup",
+          "reason": "A label close-up would confirm whether the BM-CB-55120 label is attached to a toy car rather than the expected camera body."
+        },
+        "verdict": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a close-up of the label for camera_body (HELD) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "tool_result",
+        "name": "request_evidence",
+        "result": {
+          "accepted": true,
+          "effect": "request",
+          "reason": "accepted: a close-up of the label for camera_body (HELD) is now an open request for a person; the case stays HELD and the agent doesn't wait for it"
+        }
+      },
+      {
+        "kind": "final",
+        "text": "{\"recommendation\":\"HOLD\",\"proposedRefundCents\":0,\"citedClauses\":[{\"clauseId\":\"4.2\",\"quote\":\"A kit is refunded in full only when every component listed on the packing slip is returned.\"},{\"clauseId\":\"4.3\",\"quote\":\"When a kit component is missing, the refund is held for review. A reviewer may approve a partial refund equal to the kit price less the list price of each missing component.\"},{\"clauseId\":\"5.1\",\"quote\":\"A held refund is not a denial. The customer is told what was not observed and may respond within 14 days.\"}],\"rationale\":\"The camera_body line is not OK: the item observed under its legible label was reported as a toy car, not a camera body, so a kit component is effectively missing and the full kit refund cannot proceed. The case stays HELD for human review; a label close-up for camera_body was requested to confirm the mismatch.\",\"lineNotes\":[{\"itemKey\":\"camera_body\",\"note\":\"Not OK: observed item reported as a toy car rather than the expected camera body; held pending label close-up confirmation.\"},{\"itemKey\":\"lens\",\"note\":\"OK: 1 of 1 seen settling in the tray.\"},{\"itemKey\":\"battery\",\"note\":\"OK: 1 of 1 seen settling in the tray.\"}]}"
+      }
+    ],
+    "effect": "none",
+    "evidenceRequests": [
+      {
+        "id": "evr_04997dc2",
+        "itemKey": "camera_body",
+        "kind": "label_closeup",
+        "reason": "A label close-up would confirm whether the BM-CB-55120 label is attached to a toy car rather than the expected camera body.",
+        "digest": "8e3dd064fafe934c",
+        "status": "open",
+        "requestedBy": "muse-wonder-1.0",
+        "mode": "LIVE_META",
+        "requestedAt": "recorded"
+      }
+    ]
+  }
+}

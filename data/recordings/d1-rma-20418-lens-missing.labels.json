@@ -1,0 +1,27 @@
+{
+  "recordedAt": "recorded",
+  "kind": "labels",
+  "clipId": "d1-rma-20418-lens-missing",
+  "data": {
+    "provider": "modal",
+    "model": "meta-models/Muse-Glimmer-30B",
+    "read": {
+      "items": [
+        {
+          "itemKey": "camera_body",
+          "serialRead": "BW-CB-55107",
+          "skuRead": null,
+          "legible": true,
+          "confidence": 0.95
+        },
+        {
+          "itemKey": "battery",
+          "serialRead": null,
+          "skuRead": null,
+          "legible": false,
+          "confidence": 0.15
+        }
+      ]
+    }
+  }
+}

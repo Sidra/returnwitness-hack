@@ -1,0 +1,97 @@
+/* /play and /play/walker layout: the intro beside the live counter, a compact bench, and the condensed four-question strip. */
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px 40px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+@media (min-width: 1100px) {
+  .top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; }
+}
+.top > * { min-width: 0; }
+
+.counterWrap { container-type: inline-size; min-width: 0; }
+/* The counter's own two columns follow the room it actually has, not the viewport. */
+@container (max-width: 559px) {
+  .counterWrap > section { grid-template-columns: minmax(0, 1fr); }
+  .counterWrap > section > div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--hair); padding-top: 14px; }
+}
+
+/* Compact item cards: the glyph beside the words, so a whole kit fits the first screen. */
+.bench :global(.play-items) { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 8px; }
+.bench :global(.play-zone) { min-height: 180px; }
+.bench :global(.play-item) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 2px;
+  align-items: center;
+  padding: 8px 10px;
+}
+.bench :global(.play-item-top) { grid-row: 1 / span 4; width: auto; flex-direction: column; align-items: center; align-self: center; }
+.bench :global(.play-item-top svg) { width: 44px; height: 33px; }
+.bench :global(.play-item-name),
+.bench :global(.play-item-price),
+.bench :global(.play-label),
+.bench :global(.play-item-cta) { grid-column: 2; justify-self: start; }
+.bench :global(.play-item-cta) { margin-top: 2px; font-size: 13px; }
+@media (max-width: 559px) {
+  .bench :global(.play-zone) { min-height: 120px; }
+}
+
+.help { margin: 0; font-size: 15px; color: var(--muted); }
+
+.tricky { border-top: 5px solid var(--line); padding-top: 12px; }
+.tricky > summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 19px;
+  font-weight: 700;
+  gap: 8px;
+}
+.tricky > summary { list-style: none; flex-wrap: wrap; }
+.tricky > summary::-webkit-details-marker { display: none; }
+.tricky > summary::before { content: "+"; font-family: var(--font-mono); display: inline-flex; justify-content: center; width: 24px; border: 2px solid var(--line); line-height: 20px; }
+.tricky[open] > summary::before { content: "−"; }
+.tricky > summary span { font-size: 15px; font-weight: 400; color: var(--muted); }
+.tricky :global(.play-options) { border-top: 0; padding-top: 4px; }
+.tricky :global(.touch-option) { font-size: 15px; }
+.tricky :global(.play-opt-row) { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 0 16px; align-items: center; }
+.tricky :global(.play-opt-row) > :global(.play-opt-name) { grid-row: 1 / span 2; align-self: start; padding-top: 12px; }
+.tricky :global(.play-opt-row) > :global(.touch-option) { grid-column: 2; }
+@media (max-width: 559px) {
+  .tricky :global(.play-opt-row) { grid-template-columns: minmax(0, 1fr); }
+  .tricky :global(.play-opt-row) > :global(.play-opt-name) { grid-row: auto; padding-top: 0; }
+  .tricky :global(.play-opt-row) > :global(.touch-option) { grid-column: 1; }
+}
+
+/* The four questions, condensed below the bench. */
+.why { margin-top: 48px; }
+.whyTitle { margin: 0 0 12px; }
+.whyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-top: 5px solid var(--line);
+  margin: 0;
+}
+@media (min-width: 640px) { .whyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .whyGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.whyGrid > div { min-width: 0; padding: 14px 16px 16px 0; border-bottom: 1px solid var(--hair); }
+@media (min-width: 640px) { .whyGrid > div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--hair); } }
+@media (min-width: 1100px) { .whyGrid > div + div { padding-left: 16px; border-left: 1px solid var(--hair); } }
+.whyGrid dt { margin: 0; }
+.whyGrid dd { margin: 6px 0 0; font-size: 15px; line-height: 1.5; }
+
+/* Intro */
+.intro { display: flex; flex-direction: column; gap: 10px; }
+.first { margin: 0; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.45; font-weight: 700; color: var(--ink); }
+.introRow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+
+/* Labels on the bench and the slip table at the 13px floor. */
+.bench :global(.play-zone-title),
+.bench :global(.play-label),
+.bench :global(.play-tag) { font-size: 13px; }
+.slip :global(.table th) { font-size: 13px; }
+.clause :global(.clause-id) { font-size: 13px; }

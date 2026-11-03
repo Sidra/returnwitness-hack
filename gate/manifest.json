@@ -1,0 +1,120 @@
+{
+  "rule": "scripts/gate/RULE.md",
+  "items": [
+    "camera_body",
+    "lens",
+    "battery"
+  ],
+  "clips": [
+    {
+      "id": "g0",
+      "file": "g0-empty.mov",
+      "expected": {
+        "camera_body": 0,
+        "lens": 0,
+        "battery": 0
+      },
+      "acceptHold": []
+    },
+    {
+      "id": "g1",
+      "file": "g1-clean.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": []
+    },
+    {
+      "id": "g2",
+      "file": "g2-hand-occlusion.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": []
+    },
+    {
+      "id": "g3",
+      "file": "g3-kraft-paper.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": []
+    },
+    {
+      "id": "g4",
+      "file": "g4-lift-replace.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": []
+    },
+    {
+      "id": "g5",
+      "file": "g5-missing-lens.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 0,
+        "battery": 1
+      },
+      "acceptHold": [],
+      "mustHold": [
+        "lens"
+      ]
+    },
+    {
+      "id": "g6",
+      "file": "g6-merge.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": [
+        "merged_mask"
+      ]
+    },
+    {
+      "id": "g7",
+      "file": "g7-label-covered.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": [
+        "label_unreadable"
+      ]
+    },
+    {
+      "id": "g8",
+      "file": "g8-fast.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": []
+    }
+  ],
+  "demoClips": [
+    {
+      "id": "d3",
+      "file": "d3-camera-reboxed.mov",
+      "expected": {
+        "camera_body": 1,
+        "lens": 1,
+        "battery": 1
+      },
+      "acceptHold": [],
+      "note": "demo clip, not part of the gate rule (g1-g8); scored the same way for the record"
+    }
+  ]
+}

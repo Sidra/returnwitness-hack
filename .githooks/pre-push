@@ -1,0 +1,18 @@
+#!/bin/sh
+# Every push to main deploys to production (Vercel Git integration): never push a red build.
+set -e
+echo "pre-push: typecheck, lint, tests, production build"
+npx next typegen > /dev/null && npx tsc --noEmit
+npx eslint . --quiet
+npx vitest run --reporter=dot
+# Built in the public profile, as Vercel builds production (RETURNWITNESS_PUBLIC_DEMO=1, no model keys).
+PUBLIC_ENV="RETURNWITNESS_PUBLIC_DEMO=1 RETURNWITNESS_SKIP_SEED=1 META_HACK_API_KEY= BASETEN_API_KEY= RETURNWITNESS_LABEL_READER= MODAL_GLIMMER_TOKEN="
+env $PUBLIC_ENV NEXT_DIST_DIR=.next-prepush npx next build > /tmp/rw-prepush-build.log 2>&1 || { tail -40 /tmp/rw-prepush-build.log; echo "pre-push: build FAILED, push blocked"; exit 1; }
+# Every public page (HTML + RSC payload) and public GET API of that build: no run dates, no private commit traces.
+env $PUBLIC_ENV NEXT_DIST_DIR=.next-prepush npx next start -p 3712 > /tmp/rw-prepush-surface.log 2>&1 &
+SURFACE_PID=$!
+# Cleanup must never fail the hook (set -e applies inside the trap too): every step tolerates an already-gone server.
+trap 'kill $SURFACE_PID 2>/dev/null || true; P=$(lsof -tiTCP:3712 -sTCP:LISTEN 2>/dev/null || true); if [ -n "$P" ]; then kill $P 2>/dev/null || true; fi' EXIT
+for i in $(seq 1 40); do curl -s -o /dev/null http://localhost:3712/api/status && break; sleep 1; done
+node scripts/public-surface-check.mjs http://localhost:3712 || { echo "pre-push: public surface carries dates or private traces, push blocked"; exit 1; }
+echo "pre-push: all green"

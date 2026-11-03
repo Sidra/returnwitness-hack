@@ -1,0 +1,84 @@
+/* /demo: the two outcomes side by side, before the controls. Tokens only (both themes). */
+
+.outcomes {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.outcome {
+  min-width: 0;
+  background: var(--card);
+  border-top: 5px solid var(--line);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verdict {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+.arrow {
+  font-weight: 700;
+}
+
+.waits {
+  display: inline-block;
+  border: 3px solid var(--line);
+  padding: 4px 12px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 800;
+  line-height: 1.2;
+  background: var(--card-2);
+}
+
+.body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.falseHold {
+  border-top: 1px solid var(--hair);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.falseHold :global(.loss-note) {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.provenance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .outcomes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .provenance {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "recordedAt": "recorded",
+  "kind": "spark",
+  "clipId": "d2-rma-20419-complete",
+  "meta": {
+    "model": "muse-spark-1.3",
+    "requestId": "chatcmpl-01a1a26b-7840-7286-9061-656b936fbe0a"
+  },
+  "data": {
+    "lines": [
+      {
+        "itemKey": "camera_body",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed in tray matches expected 1 with serial BW-CB-55120 matching slip"
+          }
+        ],
+        "serialRead": "BW-CB-55120"
+      },
+      {
+        "itemKey": "lens",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed in tray matches expected 1 with serial BW-LN-80311 matching slip"
+          }
+        ],
+        "serialRead": "BW-LN-80311"
+      },
+      {
+        "itemKey": "battery",
+        "observedQty": 1,
+        "status": "OK",
+        "reasons": [
+          {
+            "code": "count_match",
+            "detail": "1 observed in tray matches expected 1, no serial required"
+          }
+        ]
+      }
+    ],
+    "notes": ""
+  }
+}

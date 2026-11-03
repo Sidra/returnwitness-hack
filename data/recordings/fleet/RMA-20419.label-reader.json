@@ -1,0 +1,33 @@
+{
+  "kind": "fleet",
+  "rmaId": "RMA-20419",
+  "role": "label-reader",
+  "mode": "LIVE_META",
+  "model": "muse-spark-1.3",
+  "latencyMs": 8274,
+  "requestId": "chatcmpl-01a1a26b-f031-71a4-a121-3504b6177141",
+  "recordedAt": "recorded",
+  "ok": true,
+  "output": {
+    "reads": [
+      {
+        "itemKey": "camera_body",
+        "serialText": "BM-CB-55120",
+        "legible": true,
+        "why": "all characters clear and complete"
+      },
+      {
+        "itemKey": "lens",
+        "serialText": "BW-LN-80311",
+        "legible": true,
+        "why": "all characters clear and complete"
+      }
+    ]
+  },
+  "usage": {
+    "inputTokens": 826,
+    "outputTokens": 935,
+    "cachedTokens": 113
+  },
+  "costUsd": 0.0048819499999999995
+}

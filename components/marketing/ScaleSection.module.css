@@ -1,0 +1,14 @@
+/* The planning projection reads as a projection: smaller than any measured number on the page, tagged in its own heading. */
+.projected { display: grid; gap: 8px; }
+.projected :global(.kpi .v) { font-size: clamp(22px, 2.4vw, 28px); color: var(--muted); }
+.projected :global(.kpi .k) { font-size: 14px; line-height: 1.45; }
+.tag { justify-self: start; font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--warning); border: 1px solid currentColor; padding: 2px 8px; }
+.details { border-top: 2px solid var(--line); padding-top: 4px; }
+.details > summary { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: 16px; font-weight: 700; }
+.details > summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.details :global(.scale-kind) { font-size: 13px; }
+
+.details > summary { list-style: none; gap: 10px; cursor: pointer; }
+.details > summary::-webkit-details-marker { display: none; }
+.details > summary::before { content: "+"; flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; border: 2px solid var(--line); font-family: var(--font-mono); font-size: 15px; font-weight: 700; line-height: 1; }
+.details[open] > summary::before { content: "−"; }

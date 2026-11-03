@@ -1,0 +1,28 @@
+{
+  "recordedAt": "recorded",
+  "kind": "audit",
+  "clipId": "d1-rma-20418-lens-missing",
+  "data": {
+    "provider": "baseten",
+    "model": "meta-models/muse-spark-open-1026",
+    "audit": {
+      "items": [
+        {
+          "itemKey": "camera_body",
+          "labelLegible": true,
+          "visibleDamage": false,
+          "standInSuspected": true,
+          "note": "Label BW-CB-55107 is legible but item is a light-green toy truck, not a camera body."
+        },
+        {
+          "itemKey": "battery",
+          "labelLegible": false,
+          "visibleDamage": false,
+          "standInSuspected": false,
+          "note": "white label on black battery charger is blurred and unreadable in gloved hand, no visible damage"
+        }
+      ]
+    },
+    "unanswered": []
+  }
+}

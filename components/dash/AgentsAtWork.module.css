@@ -1,0 +1,12 @@
+/* AgentsAtWork: readable labels (≥13px), a neutral ablation label unless the shift ablation backs "changes a decision". */
+.effect { margin-top: 6px; font-family: var(--font-mono); font-size: 13px; line-height: 1.4; font-weight: 600; color: var(--muted); white-space: normal; }
+.effectDecision { color: var(--success); }
+.summary { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: 15px; font-weight: 700; line-height: 1.35; }
+.summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.costs { border-top: 2px solid var(--line); }
+.costs :global(.table th), .costs :global(.table-dense) { font-size: 13px; }
+
+.summary { list-style: none; gap: 10px; cursor: pointer; }
+.summary::-webkit-details-marker { display: none; }
+.summary::before { content: "+"; flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; border: 2px solid var(--line); font-family: var(--font-mono); font-size: 15px; font-weight: 700; line-height: 1; }
+details[open] > .summary::before { content: "−"; }

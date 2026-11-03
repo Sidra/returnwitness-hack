@@ -1,0 +1,47 @@
+{
+  "recordedAt": "recorded",
+  "kind": "spark",
+  "clipId": "gate-g0",
+  "meta": {
+    "model": "muse-spark-1.3",
+    "requestId": "chatcmpl-01a1a26e-6664-7153-b936-27c40b8d0f56"
+  },
+  "data": {
+    "lines": [
+      {
+        "itemKey": "camera_body",
+        "observedQty": 0,
+        "status": "MISSING",
+        "reasons": [
+          {
+            "code": "not_observed",
+            "detail": "No camera_body settled in inspected tray in any key frame; tray counter 0, serial BW-CB-55120 not observed."
+          }
+        ]
+      },
+      {
+        "itemKey": "lens",
+        "observedQty": 0,
+        "status": "MISSING",
+        "reasons": [
+          {
+            "code": "not_observed",
+            "detail": "No lens settled in inspected tray in any key frame; tray counter 0, serial BW-LN-80311 not observed."
+          }
+        ]
+      },
+      {
+        "itemKey": "battery",
+        "observedQty": 0,
+        "status": "MISSING",
+        "reasons": [
+          {
+            "code": "not_observed",
+            "detail": "No battery settled in inspected tray in any key frame; tray counter 0."
+          }
+        ]
+      }
+    ],
+    "notes": "Inspected tray empty in all key frames 3.2s-15.2s; tray counter 0 for all lines, no transfers observed."
+  }
+}
