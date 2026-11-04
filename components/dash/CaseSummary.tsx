@@ -1,6 +1,7 @@
 import type { ReturnCase } from "@/lib/domain/case";
 import { formatCents } from "@/lib/format";
 import { misreadsFor, misreadsIn } from "@/data/known-misreads";
+import { fromFilmedClip } from "@/lib/domain/schemas";
 import { KnownMisreadsBanner, LossNotes } from "./LossNotes";
 import styles from "./CaseSummary.module.css";
 
@@ -12,7 +13,8 @@ const STATE_TEXT: Record<string, string> = { Held: "HELD", AwaitingApproval: "wa
  */
 export function CaseSummary({ c, requestedCents }: { c: ReturnCase; requestedCents?: number }) {
   const lines = c.reconciliation?.lines ?? [];
-  const clipId = c.clip.clipId;
+  // The filmed run's known misreads belong only to a case decided on that run, not to a synthetic scene of the same RMA.
+  const clipId = fromFilmedClip(c.clip) ? c.clip.clipId : undefined;
   const held = c.state === "Held";
   return (
     <section className={styles.summary} aria-labelledby="case-summary-title">

@@ -51,6 +51,12 @@ export const MODE_TEXT: Record<ModeLabel, string> = {
 export const REAL_REPLAY_TEXT = "RECORDED · replay of a recorded real run, not a live call";
 /** The provenance the replaying segmenter writes for a recorded real run ("replay of …"). */
 export const isRealReplay = (provenance: string | undefined) => !!provenance && provenance.startsWith("replay of ");
+/**
+ * The case's evidence is the filmed clip (a live run, or a replay of one), not a synthetic scene of the same RMA. Anything
+ * that belongs to the filmed run (its scene, its readers' known misreads) is shown on a case only when this holds.
+ */
+export const fromFilmedClip = (clip: { mode: ModeLabel; provenance?: string } | undefined) =>
+  !!clip && (clip.mode === "LIVE_META" || clip.mode === "LIVE_OPEN_WEIGHTS" || isRealReplay(clip.provenance));
 export const modeText = (mode: ModeLabel, realReplay = false) => (mode === "RECORDED_FIXTURE" && realReplay ? REAL_REPLAY_TEXT : MODE_TEXT[mode]);
 
 export const SegmentationResult = z.object({

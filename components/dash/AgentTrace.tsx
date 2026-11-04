@@ -7,7 +7,7 @@ import { MERCHANT } from "@/data/fixtures";
 import { api, ApiError } from "@/lib/client/api";
 import { useStoredValue } from "@/lib/client/storage";
 import { AGENT_LIMITS } from "@/lib/engine/agent-limits";
-import { isRealReplay } from "@/lib/domain/schemas";
+import { fromFilmedClip, isRealReplay } from "@/lib/domain/schemas";
 import { misreadsIn } from "@/data/known-misreads";
 import { LossNotes } from "./LossNotes";
 
@@ -49,7 +49,7 @@ export function AgentTrace({ draft, c, onCase }: { draft: DraftRecord; c?: Retur
       <p style={{ margin: 0, fontSize: 15 }}>
         <strong>The agent can only move a case toward HELD.</strong> APPROVED needs a person&apos;s one-time token, and app code rejects any other proposal. It may ask a person for missing evidence (at most {AGENT_LIMITS.maxEvidenceRequests} requests, {AGENT_LIMITS.maxModelRounds} rounds, {AGENT_LIMITS.deadlineMs / 1000} s); it never waits for the answer.
       </p>
-      {a && <LossNotes items={misreadsIn(c?.clip.clipId, JSON.stringify(a.steps))} />}
+      {a && <LossNotes items={misreadsIn(fromFilmedClip(c?.clip) ? c?.clip.clipId : undefined, JSON.stringify(a.steps))} />}
       {!a && <p className="muted" style={{ margin: 0, fontSize: 14 }}>Agent trace · not run: {draft.agentNotRun}. The draft below is the app-code template.</p>}
       {a && (
         <>

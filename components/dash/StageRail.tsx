@@ -55,7 +55,7 @@ export function StageRail({ stages, realReplay = false }: { stages: StageMap; re
       </div>
       {Object.values(stages).every((v) => v.state === "done") && (
         <span className="mono muted" style={{ fontSize: 13 }}>
-          End to end: {fmtMs(total)} measured on this server{stages.segment.mode === "RECORDED_FIXTURE" ? " (segmentation replayed from a recording; live SAM 3.1 adds its own time)" : ""}
+          End to end: {fmtMs(total)} measured on this server{stages.segment.mode === "RECORDED_FIXTURE" ? (realReplay ? " (segmentation replayed from the recorded real run; live SAM 3.1 adds its own time)" : " (segmentation from a synthetic scene; live SAM 3.1 adds its own time)") : ""}
         </span>
       )}
     </div>

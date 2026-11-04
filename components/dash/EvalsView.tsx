@@ -109,7 +109,7 @@ export function EvalsView({ part }: { part: "real" | "rest" }) {
         <RealGate live={live} rescore={rescore} framing={d.gate?.framing?.line} verdictClass={verdictClass} />
         <div className="kpis">
           <div className="kpi">
-            <div className="v">{live ? live.verdict : "—"}</div>
+            <div className={live ? "v v-word" : "v"}>{live ? live.verdict : "—"}</div>
             <div className="k">{live ? `the registered gate on the filmed clips: ${live.notRun?.length ? `not run as registered, ${live.notRun.join(", ")} not filmed` : "every registered clip scored"}` : "real gate run: not run yet"}</div>
           </div>
           <div className="kpi">

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { mmss, useElapsed } from "@/lib/client/time";
 import type { RefundConfirmation, ReturnCase } from "@/lib/domain/case";
 import type { LineStatus, ReconciliationLine } from "@/lib/domain/schemas";
-import { isRealReplay, modeText } from "@/lib/domain/schemas";
+import { fromFilmedClip, isRealReplay, modeText } from "@/lib/domain/schemas";
 import { formatCents, formatCentsExact } from "@/lib/format";
 import { POLICY, rmaById, STRIPE_TEST_LABEL, FIXTURE_LABEL } from "@/data/fixtures";
 import { ModeBadge } from "@/components/ModeBadge";
@@ -84,6 +84,8 @@ export function InspectionResult({ c, onCase, compact = false }: { c: ReturnCase
   const rma = rmaById(c.rmaId);
   const recon = c.reconciliation;
   const realReplay = isRealReplay(c.clip.provenance);
+  // The filmed run's known misreads belong only to a case decided on that run, not to a synthetic scene of the same RMA.
+  const misreadClip = fromFilmedClip(c.clip) ? c.clip.clipId : undefined;
   return (
     <div className="stack" style={{ gap: 20 }}>
       <div className="row" style={{ justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -101,7 +103,7 @@ export function InspectionResult({ c, onCase, compact = false }: { c: ReturnCase
       </div>
 
       <StateHeadline c={c} />
-      <KnownMisreadsBanner items={misreadsFor(c.clip.clipId)} />
+      <KnownMisreadsBanner items={misreadsFor(misreadClip)} />
 
       {c.state === "Held" && c.holdReasons.some((r) => r.endsWith("_error") || r.includes("unavailable")) && (
         <div className="clause" role="alert">
@@ -132,7 +134,7 @@ export function InspectionResult({ c, onCase, compact = false }: { c: ReturnCase
               </thead>
               <tbody>
                 {recon.lines.map((l) => (
-                  <LineRow key={l.itemKey} l={l} clipId={c.clip.clipId} />
+                  <LineRow key={l.itemKey} l={l} clipId={misreadClip} />
                 ))}
               </tbody>
             </table>
@@ -159,7 +161,7 @@ export function InspectionResult({ c, onCase, compact = false }: { c: ReturnCase
             </span>
           </div>
           <p style={{ margin: 0, maxWidth: "70ch" }}>{c.draft.draft.rationale}</p>
-          <LossNotes items={misreadsIn(c.clip.clipId, c.draft.draft.rationale)} />
+          <LossNotes items={misreadsIn(misreadClip, c.draft.draft.rationale)} />
           {c.draft.draft.citedClauses.map((cc) => {
             const cl = POLICY.clauses.find((x) => x.id === cc.clauseId);
             return (
@@ -180,7 +182,7 @@ export function InspectionResult({ c, onCase, compact = false }: { c: ReturnCase
       )}
 
       {c.voiceNote && <VoiceNoteCard note={c.voiceNote} cited={c.draft?.draft.citedVoiceNote} />}
-      {c.readerRuns && c.readerRuns.length > 0 && <ReaderCards runs={c.readerRuns} clipId={c.clip.clipId} />}
+      {c.readerRuns && c.readerRuns.length > 0 && <ReaderCards runs={c.readerRuns} clipId={misreadClip} />}
 
       {c.readerRuns?.some(isLabelReaderRun) && <CorrectionForm c={c} onCase={onCase} />}
 

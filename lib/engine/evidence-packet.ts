@@ -18,7 +18,7 @@ import { createHmac, createPrivateKey, createPublicKey, sign as edSign, verify a
 import type { ReturnCase } from "@/lib/domain/case";
 import { MODE_TEXT, type PackingSlip, type Policy, type Rma } from "@/lib/domain/schemas";
 import { canonicalJson, sha256 } from "./digest";
-import { isRealReplay, modeText } from "@/lib/domain/schemas";
+import { fromFilmedClip, isRealReplay, modeText } from "@/lib/domain/schemas";
 import { misreadsFor } from "@/data/known-misreads";
 import { neutralizeTimes } from "@/lib/public/neutral-times";
 
@@ -101,7 +101,7 @@ export function buildPacket(c: ReturnCase, ctx: PacketContext, opts: { now?: Dat
   const keys = opts.keys ?? null;
   const replay = c.clip.mode === "RECORDED_FIXTURE";
   const realReplay = replay && isRealReplay(c.clip.provenance);
-  const misreads = misreadsFor(c.clip.clipId);
+  const misreads = fromFilmedClip(c.clip) ? misreadsFor(c.clip.clipId) : [];
   // A replay of a recorded real run says so on every label, never "synthetic scene".
   const tag = (m: keyof typeof MODE_TEXT) => modeText(m, realReplay);
   const limitations = [

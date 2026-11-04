@@ -9,7 +9,7 @@ import { SceneReplay } from "./SceneReplay";
 import { InspectionResult } from "./InspectionResult";
 import { CaseSummary } from "./CaseSummary";
 import { StageRail, stagesFromTimings } from "./StageRail";
-import { isRealReplay } from "@/lib/domain/schemas";
+import { fromFilmedClip, isRealReplay } from "@/lib/domain/schemas";
 import { LocalTime } from "@/components/LocalTime";
 
 /** The full inspection record: the evidence, the reasoning, the decision trail, the money. */
@@ -55,7 +55,7 @@ export function CaseRecord() {
       <div className="stack" style={{ gap: 32 }}>
         <CaseSummary c={c} requestedCents={rma?.requestedRefundCents} />
         <div className="bench-grid">
-          <SceneReplay key={c.clip.clipId} clipId={c.clip.clipId} arrivals={c.count?.arrivals} />
+          <SceneReplay key={c.clip.clipId} clipId={c.clip.clipId} arrivals={c.count?.arrivals} synthetic={!fromFilmedClip(c.clip)} />
           <div className="stack" style={{ gap: 16 }}>
             <StageRail stages={stagesFromTimings(c.timings)} realReplay={isRealReplay(c.clip.provenance)} />
             {c.count && (

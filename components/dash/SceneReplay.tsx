@@ -23,7 +23,8 @@ interface SceneData {
 
 const tok = (el: Element, name: string) => getComputedStyle(el).getPropertyValue(name).trim() || "#888";
 
-export function SceneReplay({ clipId, arrivals, autoPlayKey, onTime, showTracks = true }: { clipId: string; arrivals?: Arrival[]; autoPlayKey?: number; onTime?: (t: number) => void; showTracks?: boolean }) {
+/** `synthetic`: the case was decided on the synthetic scene, so replay that scene even if a recording of the real run exists. */
+export function SceneReplay({ clipId, arrivals, autoPlayKey, onTime, showTracks = true, synthetic = false }: { clipId: string; arrivals?: Arrival[]; autoPlayKey?: number; onTime?: (t: number) => void; showTracks?: boolean; synthetic?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<SceneData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +34,7 @@ export function SceneReplay({ clipId, arrivals, autoPlayKey, onTime, showTracks 
 
   useEffect(() => {
     let alive = true;
-    fetch(`/api/scenes/${encodeURIComponent(clipId)}`, { cache: "no-store" })
+    fetch(`/api/scenes/${encodeURIComponent(clipId)}${synthetic ? "?scene=synthetic" : ""}`, { cache: "no-store" })
       .then(async (r) => {
         const b = await r.json();
         if (!r.ok) throw new Error(b.message ?? "scene unavailable");
@@ -48,7 +49,7 @@ export function SceneReplay({ clipId, arrivals, autoPlayKey, onTime, showTracks 
     return () => {
       alive = false;
     };
-  }, [clipId]);
+  }, [clipId, synthetic]);
 
   const total = data?.segmentation.frames.length ?? 0;
   const fps = data?.segmentation.fps ?? 5;
